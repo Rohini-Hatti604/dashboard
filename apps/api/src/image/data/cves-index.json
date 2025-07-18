@@ -1,0 +1,73 @@
+[
+  {
+    "id": "cve-2024-nginx-001",
+    "name": "nginx HTTP/2 CONTINUATION Flood",
+    "description": "A vulnerability in nginx's HTTP/2 module could allow remote attackers to cause a denial of service via CONTINUATION frames.",
+    "severity": "medium",
+    "cvssScore": 5.3,
+    "cvssVector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:L",
+    "cveId": "CVE-2024-12789",
+    "fixedInVersion": "1.25.3",
+    "references": [
+      "https://nginx.org/en/security_advisories.html",
+      "https://nvd.nist.gov/vuln/detail/CVE-2024-12789"
+    ],
+    "imageVersionId": "ver-nginx-latest",
+    "imageId": "img-nginx-official",
+    "image": {
+      "id": "img-nginx-official",
+      "name": "nginx"
+    },
+    "packages": [
+      {
+        "id": "pkg-nginx-core",
+        "name": "nginx",
+        "version": "1.25.2"
+      }
+    ],
+    "publishedAt": "2024-01-10T00:00:00Z",
+    "detectedAt": "2024-01-10T12:00:00Z",
+    "createdAt": "2024-01-10T12:00:00Z",
+    "updatedAt": "2024-01-20T10:00:00Z",
+    "isFixed": true,
+    "status": "fixed"
+  },
+  {
+    "id": "cve-2023-openssl-001",
+    "name": "OpenSSL Excessive Time Spent Checking DH Keys and Parameters",
+    "description": "Issue with DH key and parameter checking that could lead to excessive time spent, causing a denial of service.",
+    "severity": "low",
+    "cvssScore": 3.7,
+    "cvssVector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:N/I:N/A:L",
+    "cveId": "CVE-2023-3446",
+    "fixedInVersion": "3.0.11",
+    "imageVersionId": "ver-nginx-latest",
+    "imageId": "img-nginx-official",
+    "packages": [
+      {
+        "id": "pkg-openssl-nginx",
+        "name": "openssl",
+        "version": "3.0.9"
+      }
+    ],
+    "publishedAt": "2023-07-19T00:00:00Z",
+    "detectedAt": "2023-07-20T08:00:00Z",
+    "isFixed": true,
+    "status": "fixed"
+  },
+  {
+    "id": "cve-2023-glibc-001",
+    "name": "glibc Buffer Overflow in syslog",
+    "description": "A buffer overflow was discovered in the glibc syslog function which could result in application crash.",
+    "severity": "medium",
+    "cvssScore": 5.5,
+    "cvssVector": "CVSS:3.1/AV:L/AC:L/PR:N/UI:R/S:U/C:N/I:N/A:H",
+    "cveId": "CVE-2023-6246",
+    "imageVersionId": "ver-python-3.12",
+    "imageId": "img-python-official",
+    "publishedAt": "2023-12-15T00:00:00Z",
+    "detectedAt": "2023-12-16T10:00:00Z",
+    "isFixed": false,
+    "status": "under_investigation"
+  }
+]

@@ -1,0 +1,21 @@
+model UserVariable {
+    id             String   @id @default(auto()) @map("_id") @db.ObjectId
+    key            String
+    value          String
+    type           String
+    scope          String
+    isPublic       Boolean? @default(false)
+    organizationId String?  @db.ObjectId
+    dashboardId    String?  @db.ObjectId
+    ownerId        String   @db.ObjectId
+    createdAt      DateTime @default(now())
+    updatedAt      DateTime @updatedAt
+}
+
+// type Permissions {
+//     create String[]
+//     list   String[]
+//     get    String[]
+//     update String[]
+//     delete String[]
+// }

@@ -1,0 +1,43 @@
+import { DashboardCategory } from "dashboard-category"
+
+model Widget {
+    id           String        @id @default(auto()) @map("_id") @db.ObjectId
+    title        String
+    isPublic     Boolean       @default(false)
+    type         String
+    renderMethod RenderMethod? @default(STATIC)
+    config       Json
+    tags         String[]
+
+    widgetCategoryId String?            @db.ObjectId
+    widgetCategory   DashboardCategory? @relation(fields: [widgetCategoryId], references: [id])
+    //timestamp
+    createdAt        DateTime           @default(now())
+    updatedAt        DateTime           @updatedAt
+}
+
+enum RenderMethod {
+    STATIC
+    DYNAMIC
+}
+
+enum ChartType {
+    PIE
+    BAR
+    LINE
+    DOUGHNUT
+    AREA
+    TABLE
+    GAUGE
+    HEATMAP
+    MAP
+    GEO
+    HISTOGRAM
+    SCATTER
+    SUNBURST
+    TREEMAP
+    FUNNEL
+    WORD_CLOUD
+    NETWORK
+    CANDLESTICK
+}

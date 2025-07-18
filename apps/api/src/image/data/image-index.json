@@ -1,0 +1,271 @@
+[
+  {
+    "id": "img-nginx-official",
+    "name": "nginx",
+    "description": "Official build of Nginx. Nginx (pronounced 'engine-x') is an open source reverse proxy server for HTTP, HTTPS, SMTP, POP3, and IMAP protocols, as well as a load balancer, HTTP cache, and a web server.",
+    "isValid": true,
+    "categoryId": "cat-webserver",
+    "category": {
+      "id": "cat-webserver",
+      "name": "Web Servers",
+      "description": "HTTP servers, reverse proxies, and load balancers",
+      "imageUrl": "https://cdn.example.com/categories/webservers.png"
+    },
+    "imageUrl": "https://hub.docker.com/_/nginx",
+    "architecture": ["amd64", "arm64", "arm/v6", "arm/v7", "i386", "mips64le", "ppc64le", "s390x"],
+    "license": "BSD-2-Clause",
+    "userId": "docker-official",
+    "os": "linux",
+    "vulnerabilityIds": ["cve-2024-nginx-001"],
+    "vulnerabilities": [
+      {
+        "id": "cve-2024-nginx-001",
+        "name": "nginx Buffer Overflow",
+        "severity": "medium",
+        "cvssScore": 5.3,
+        "cveId": "CVE-2024-12789",
+        "status": "fixed"
+      }
+    ],
+    "pullCount": 5000000000,
+    "tags": {
+      "featured": [
+        {
+          "value": "official",
+          "label": "Docker Official Image",
+          "icon": "docker"
+        },
+        {
+          "value": "verified",
+          "label": "Verified Publisher",
+          "icon": "check-circle"
+        }
+      ],
+      "tags": [
+        {
+          "value": "web-server",
+          "label": "Web Server"
+        },
+        {
+          "value": "reverse-proxy",
+          "label": "Reverse Proxy"
+        },
+        {
+          "value": "load-balancer",
+          "label": "Load Balancer"
+        }
+      ]
+    },
+    "details": [
+      {
+        "title": "Quick Reference",
+        "type": "LIST",
+        "content": [
+          {"text": "Maintained by: Docker, Inc."},
+          {"text": "Where to file issues: https://github.com/nginxinc/docker-nginx/issues"}
+        ]
+      },
+      {
+        "title": "Example Usage",
+        "type": "CODE",
+        "codeLanguage": "bash",
+        "content": [
+          {"text": "docker run --name some-nginx -d -p 8080:80 nginx"}
+        ]
+      }
+    ],
+    "provenance": [
+      {
+        "title": "Source",
+        "type": "LINK",
+        "url": "https://github.com/nginxinc/docker-nginx",
+        "content": [
+          {"text": "View Dockerfile and build scripts on GitHub"}
+        ]
+      }
+    ],
+    "versionIds": ["ver-nginx-latest", "ver-nginx-alpine", "ver-nginx-1.25"],
+    "currentVersion": "1.25.3",
+    "updatedAt": "2024-01-20T10:00:00Z",
+    "publishedAt": "2014-06-05T00:00:00Z"
+  },
+  {
+    "id": "img-postgres-official",
+    "name": "postgres",
+    "description": "PostgreSQL is a powerful, open source object-relational database system. It has a proven architecture that has earned it a strong reputation for reliability, data integrity, and correctness.",
+    "isValid": true,
+    "categoryId": "cat-database",
+    "category": {
+      "id": "cat-database",
+      "name": "Databases",
+      "description": "Relational and NoSQL database systems"
+    },
+    "imageUrl": "https://hub.docker.com/_/postgres",
+    "architecture": ["amd64", "arm64", "arm/v7", "ppc64le", "s390x"],
+    "license": "PostgreSQL",
+    "userId": "docker-official",
+    "os": "linux",
+    "vulnerabilityIds": [],
+    "pullCount": 1000000000,
+    "tags": {
+      "featured": [
+        {
+          "value": "official",
+          "label": "Docker Official Image",
+          "icon": "docker"
+        }
+      ],
+      "tags": [
+        {
+          "value": "database",
+          "label": "Database"
+        },
+        {
+          "value": "sql",
+          "label": "SQL"
+        },
+        {
+          "value": "relational",
+          "label": "Relational"
+        }
+      ]
+    },
+    "details": [
+      {
+        "title": "Environment Variables",
+        "type": "LIST",
+        "content": [
+          {"text": "POSTGRES_PASSWORD - superuser password (required)"},
+          {"text": "POSTGRES_USER - superuser name (default: postgres)"},
+          {"text": "POSTGRES_DB - default database name"}
+        ]
+      }
+    ],
+    "versionIds": ["ver-postgres-16", "ver-postgres-15", "ver-postgres-14-alpine"],
+    "currentVersion": "16.1",
+    "updatedAt": "2024-01-18T08:00:00Z",
+    "publishedAt": "2014-07-24T00:00:00Z"
+  },
+  {
+    "id": "img-redis-official",
+    "name": "redis",
+    "description": "Redis is an open source key-value store that functions as a data structure server. Redis cluster provides a way to run a Redis installation where data is automatically sharded across multiple nodes.",
+    "isValid": true,
+    "categoryId": "cat-database",
+    "imageUrl": "https://hub.docker.com/_/redis",
+    "architecture": ["amd64", "arm64", "arm/v6", "arm/v7", "i386", "mips64le", "ppc64le", "s390x"],
+    "license": "BSD-3-Clause",
+    "os": "linux",
+    "vulnerabilityIds": [],
+    "pullCount": 1000000000,
+    "tags": {
+      "featured": [
+        {
+          "value": "official",
+          "label": "Docker Official Image",
+          "icon": "docker"
+        }
+      ],
+      "tags": [
+        {
+          "value": "cache",
+          "label": "Cache"
+        },
+        {
+          "value": "nosql",
+          "label": "NoSQL"
+        },
+        {
+          "value": "key-value",
+          "label": "Key-Value Store"
+        }
+      ]
+    },
+    "versionIds": ["ver-redis-7", "ver-redis-7-alpine", "ver-redis-6"],
+    "currentVersion": "7.2.4",
+    "updatedAt": "2024-01-19T12:00:00Z"
+  },
+  {
+    "id": "img-python-official",
+    "name": "python",
+    "description": "Python is an interpreted, interactive, object-oriented, open-source programming language. The official Python image includes Python runtime and essential tools.",
+    "isValid": true,
+    "categoryId": "cat-language",
+    "category": {
+      "id": "cat-language",
+      "name": "Programming Languages",
+      "description": "Language runtimes and development environments"
+    },
+    "imageUrl": "https://hub.docker.com/_/python",
+    "architecture": ["amd64", "arm64", "arm/v6", "arm/v7", "i386", "mips64le", "ppc64le", "s390x"],
+    "license": "PSF",
+    "os": "linux",
+    "pullCount": 1000000000,
+    "tags": {
+      "featured": [
+        {
+          "value": "official",
+          "label": "Docker Official Image",
+          "icon": "docker"
+        }
+      ],
+      "tags": [
+        {
+          "value": "programming",
+          "label": "Programming Language"
+        },
+        {
+          "value": "runtime",
+          "label": "Runtime"
+        }
+      ]
+    },
+    "versionIds": ["ver-python-3.12", "ver-python-3.11-slim", "ver-python-3.10-alpine"],
+    "currentVersion": "3.12.1",
+    "updatedAt": "2024-01-17T14:00:00Z"
+  },
+  {
+    "id": "img-alpine-official",
+    "name": "alpine",
+    "description": "Alpine Linux is a security-oriented, lightweight Linux distribution based on musl libc and busybox. A minimal Docker image based on Alpine Linux with a complete package index and only 5 MB in size!",
+    "isValid": true,
+    "categoryId": "cat-os",
+    "category": {
+      "id": "cat-os",
+      "name": "Operating Systems",
+      "description": "Base operating system images"
+    },
+    "imageUrl": "https://hub.docker.com/_/alpine",
+    "architecture": ["amd64", "arm64", "arm/v6", "arm/v7", "i386", "ppc64le", "s390x"],
+    "license": "MIT",
+    "os": "linux",
+    "pullCount": 1000000000,
+    "tags": {
+      "featured": [
+        {
+          "value": "official",
+          "label": "Docker Official Image",
+          "icon": "docker"
+        },
+        {
+          "value": "minimal",
+          "label": "Minimal Size",
+          "icon": "compress"
+        }
+      ],
+      "tags": [
+        {
+          "value": "lightweight",
+          "label": "Lightweight"
+        },
+        {
+          "value": "security",
+          "label": "Security-focused"
+        }
+      ]
+    },
+    "versionIds": ["ver-alpine-3.19", "ver-alpine-3.18", "ver-alpine-edge"],
+    "currentVersion": "3.19.0",
+    "updatedAt": "2024-01-12T06:00:00Z"
+  }
+]

@@ -1,0 +1,163 @@
+[
+  {
+    "id": "ver-nginx-latest",
+    "imageId": "img-nginx-official",
+    "name": "latest",
+    "image": {
+      "id": "img-nginx-official",
+      "name": "nginx",
+      "os": "linux",
+      "architecture": ["amd64", "arm64"]
+    },
+    "description": "Latest stable nginx release based on Debian",
+    "isLatest": true,
+    "releaseDate": "2024-01-20T10:00:00Z",
+    "releaseNotes": "Updated to nginx 1.25.3 with security patches",
+    "digest": "sha256:4c0fdaa8b6341bfdeca5f18f7837462c80cff90527ee35ef185571e1c327beac",
+    "size": [
+      {"architecture": "amd64", "bytes": 67221323},
+      {"architecture": "arm64", "bytes": 65109876}
+    ],
+    "architecture": ["amd64", "arm64", "arm/v6", "arm/v7"],
+    "os": "linux",
+    "license": "BSD-2-Clause",
+    "pullUrl": "docker pull nginx:latest",
+    "pullCount": 2000000000,
+    "updatedAt": "2024-01-20T10:00:00Z",
+    "specifications": {
+      "user": "nginx",
+      "configuration": "Nginx with default configuration, ready for reverse proxy or web serving",
+      "stopSignal": "SIGQUIT",
+      "workingDirectory": "/usr/share/nginx/html",
+      "environmentVariables": {
+        "NGINX_VERSION": "1.25.3",
+        "NJS_VERSION": "0.8.2",
+        "PKG_RELEASE": "1~bookworm"
+      },
+      "cmd": "nginx -g 'daemon off;'",
+      "entrypoint": "/docker-entrypoint.sh",
+      "hasShell": true,
+      "hasAPK": false
+    },
+    "packages": [
+      {
+        "id": "pkg-nginx-core",
+        "name": "nginx",
+        "version": "1.25.3-1~bookworm",
+        "size": 1203456
+      },
+      {
+        "id": "pkg-openssl-nginx",
+        "name": "openssl",
+        "version": "3.0.11-1~deb12u2",
+        "size": 4067328
+      }
+    ]
+  },
+  {
+    "id": "ver-nginx-alpine",
+    "imageId": "img-nginx-official",
+    "name": "alpine",
+    "description": "Nginx on Alpine Linux - minimal size",
+    "isLatest": false,
+    "releaseDate": "2024-01-20T10:00:00Z",
+    "digest": "sha256:a59278fd22a9d411121e190b8cec8aa57b306aa3332459197f8e6e5b8c5c2e82",
+    "size": [
+      {"architecture": "amd64", "bytes": 16721437},
+      {"architecture": "arm64", "bytes": 16234567}
+    ],
+    "os": "linux",
+    "pullUrl": "docker pull nginx:alpine",
+    "pullCount": 500000000,
+    "specifications": {
+      "hasShell": true,
+      "hasAPK": true
+    }
+  },
+  {
+    "id": "ver-postgres-16",
+    "imageId": "img-postgres-official",
+    "name": "16",
+    "description": "PostgreSQL 16.1 - Latest major version with improved performance",
+    "isLatest": true,
+    "releaseDate": "2024-01-18T08:00:00Z",
+    "releaseNotes": "PostgreSQL 16.1 maintenance release with bug fixes",
+    "digest": "sha256:ce5173fced5f9a9bc9175df09da8ee3b73dfb7ac6de0fb31d4a0a3264e731e09",
+    "size": [
+      {"architecture": "amd64", "bytes": 139823104},
+      {"architecture": "arm64", "bytes": 137654321}
+    ],
+    "os": "linux",
+    "pullUrl": "docker pull postgres:16",
+    "pullCount": 100000000,
+    "specifications": {
+      "user": "postgres",
+      "workingDirectory": "/",
+      "environmentVariables": {
+        "PGDATA": "/var/lib/postgresql/data",
+        "POSTGRES_VERSION": "16.1",
+        "PATH": "/usr/local/pgsql/bin:$PATH"
+      },
+      "cmd": "postgres",
+      "entrypoint": "docker-entrypoint.sh",
+      "hasShell": true
+    },
+    "packages": [
+      {
+        "id": "pkg-postgresql-16",
+        "name": "postgresql-16",
+        "version": "16.1-1.pgdg120+1",
+        "size": 45678901
+      }
+    ]
+  },
+  {
+    "id": "ver-redis-7-alpine",
+    "imageId": "img-redis-official",
+    "name": "7-alpine",
+    "description": "Redis 7.2.4 on Alpine Linux - lightweight and secure",
+    "isLatest": true,
+    "releaseDate": "2024-01-19T12:00:00Z",
+    "digest": "sha256:8e90e8b0e3a5d1c5c53a9c79e5abd97fc72f6ba7e4c56157bff6e37342b8e144",
+    "size": [
+      {"architecture": "amd64", "bytes": 15234567},
+      {"architecture": "arm64", "bytes": 14987654}
+    ],
+    "os": "linux",
+    "pullUrl": "docker pull redis:7-alpine",
+    "pullCount": 200000000,
+    "specifications": {
+      "user": "redis",
+      "workingDirectory": "/data",
+      "cmd": "redis-server",
+      "hasShell": true,
+      "hasAPK": true
+    }
+  },
+  {
+    "id": "ver-python-3.12",
+    "imageId": "img-python-official",
+    "name": "3.12",
+    "description": "Python 3.12.1 with pip and setuptools",
+    "isLatest": true,
+    "releaseDate": "2024-01-17T14:00:00Z",
+    "digest": "sha256:fc431e69a65f0c323f3c76af5dfbb82af60a2d3e1497c24488e59f223c358b5b",
+    "size": [
+      {"architecture": "amd64", "bytes": 372891234},
+      {"architecture": "arm64", "bytes": 368765432}
+    ],
+    "os": "linux",
+    "pullUrl": "docker pull python:3.12",
+    "pullCount": 150000000,
+    "specifications": {
+      "workingDirectory": "/",
+      "environmentVariables": {
+        "PYTHON_VERSION": "3.12.1",
+        "PYTHON_PIP_VERSION": "23.3.2",
+        "PYTHON_SETUPTOOLS_VERSION": "69.0.3"
+      },
+      "cmd": "python3",
+      "hasShell": true
+    }
+  }
+]

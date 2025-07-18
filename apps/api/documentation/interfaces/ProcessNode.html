@@ -1,0 +1,933 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>@clean-start-dashboard/api documentation</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+	   <link rel="stylesheet" href="../styles/style.css">
+        <link rel="stylesheet" href="../styles/dark.css">
+    </head>
+    <body>
+          <script>
+               // Blocking script to avoid flickering dark mode
+               // Dark mode toggle button
+               var useDark = window.matchMedia('(prefers-color-scheme: dark)');
+               var darkModeState = useDark.matches;
+               var $darkModeToggleSwitchers = document.querySelectorAll('.dark-mode-switch input');
+               var $darkModeToggles = document.querySelectorAll('.dark-mode-switch');
+               var darkModeStateLocal = localStorage.getItem('compodoc_darkmode-state');
+
+               function checkToggle(check) {
+                    for (var i = 0; i < $darkModeToggleSwitchers.length; i++) {
+                         $darkModeToggleSwitchers[i].checked = check;
+                    }
+               }
+
+               function toggleDarkMode(state) {
+                    if (window.localStorage) {
+                         localStorage.setItem('compodoc_darkmode-state', state);
+                    }
+
+                    checkToggle(state);
+
+                    const hasClass = document.body.classList.contains('dark');
+
+                    if (state) {
+                         for (var i = 0; i < $darkModeToggles.length; i++) {
+                              $darkModeToggles[i].classList.add('dark');
+                         }
+                         if (!hasClass) {
+                              document.body.classList.add('dark');
+                         }
+                    } else {
+                         for (var i = 0; i < $darkModeToggles.length; i++) {
+                              $darkModeToggles[i].classList.remove('dark');
+                         }
+                         if (hasClass) {
+                              document.body.classList.remove('dark');
+                         }
+                    }
+               }
+
+               useDark.addEventListener('change', function (evt) {
+                    toggleDarkMode(evt.matches);
+               });
+               if (darkModeStateLocal) {
+                    darkModeState = darkModeStateLocal === 'true';
+               }
+               toggleDarkMode(darkModeState);
+          </script>
+
+        <div class="navbar navbar-default navbar-fixed-top d-md-none p-0">
+               <div class="d-flex">
+                    <a href="../" class="navbar-brand">@clean-start-dashboard/api documentation</a>
+                    <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+               </div>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+                <div id="book-search-input" role="search"><input type="text" placeholder="Type to search"></div>            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="d-none d-md-block menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content interface">
+                   <div class="content-data">
+
+
+
+
+
+
+
+
+
+
+
+
+
+<ol class="breadcrumb">
+  <li class="breadcrumb-item">Interfaces</li>
+  <li class="breadcrumb-item"
+  >
+  ProcessNode</li>
+</ol>
+
+<ul class="nav nav-tabs" role="tablist">
+        <li class="nav-item">
+            <a href="#info" 
+                class="nav-link"
+                class="nav-link active"
+                role="tab" id="info-tab" data-bs-toggle="tab" data-link="info">Info</a>
+        </li>
+        <li class="nav-item">
+            <a href="#source" 
+                class="nav-link"
+                
+                role="tab" id="source-tab" data-bs-toggle="tab" data-link="source">Source</a>
+        </li>
+</ul>
+
+<div class="tab-content">
+    <div class="tab-pane fade active in" id="info">
+        <p class="comment">
+            <h3>File</h3>
+        </p>
+        <p class="comment">
+            <code>src/open-search/open-search.service.ts</code>
+        </p>
+
+
+
+
+        <section data-compodoc="block-index">
+            <h3 id="index">Index</h3>
+            <table class="table table-sm table-bordered index-table">
+                <tbody>
+                    <tr>
+                        <td class="col-md-4">
+                            <h6><b>Properties</b></h6>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <ul class="index-list">
+                                <li>
+                                        <a href="#children" 
+>
+                                            children
+                                        </a>
+                                </li>
+                                <li>
+                                        <a href="#cmd" 
+>
+                                            cmd
+                                        </a>
+                                </li>
+                                <li>
+                                        <a href="#fileHash" 
+>
+                                            fileHash
+                                        </a>
+                                </li>
+                                <li>
+                                        <a href="#filePath" 
+>
+                                            filePath
+                                        </a>
+                                </li>
+                                <li>
+                                        <a href="#integrityLevel" 
+>
+                                            integrityLevel
+                                        </a>
+                                </li>
+                                <li>
+                                        <a href="#name" 
+>
+                                            name
+                                        </a>
+                                </li>
+                                <li>
+                                        <a href="#pid" 
+>
+                                            pid
+                                        </a>
+                                </li>
+                                <li>
+                                        <a href="#user" 
+>
+                                            user
+                                        </a>
+                                </li>
+                            </ul>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+
+
+            <section data-compodoc="block-properties">
+                <h3 id="inputs">Properties</h3>
+                    <table class="table table-sm table-bordered">
+                        <tbody>
+                                <tr>
+                                    <td class="col-md-4">
+                                        <a name="children"></a>
+                                        <span class="name "><b>children</b>
+                                            <a href="#children">
+                                                <span class="icon ion-ios-link"></span>
+                                            </a>
+                                        </span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="col-md-4">
+                                        <code>children:         <code><a href="../interfaces/ProcessNode.html" target="_self" >ProcessNode[]</a></code>
+</code>
+                                    </td>
+                                </tr>
+
+
+                                    <tr>
+                                        <td class="col-md-4">
+                                            <i>Type : </i>        <code><a href="../interfaces/ProcessNode.html" target="_self" >ProcessNode[]</a></code>
+
+                                        </td>
+                                    </tr>
+
+
+
+
+
+                        </tbody>
+                    </table>
+                    <table class="table table-sm table-bordered">
+                        <tbody>
+                                <tr>
+                                    <td class="col-md-4">
+                                        <a name="cmd"></a>
+                                        <span class="name "><b>cmd</b>
+                                            <a href="#cmd">
+                                                <span class="icon ion-ios-link"></span>
+                                            </a>
+                                        </span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="col-md-4">
+                                        <code>cmd:         <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+</code>
+                                    </td>
+                                </tr>
+
+
+                                    <tr>
+                                        <td class="col-md-4">
+                                            <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                                        </td>
+                                    </tr>
+
+
+
+
+
+                        </tbody>
+                    </table>
+                    <table class="table table-sm table-bordered">
+                        <tbody>
+                                <tr>
+                                    <td class="col-md-4">
+                                        <a name="fileHash"></a>
+                                        <span class="name "><b>fileHash</b>
+                                            <a href="#fileHash">
+                                                <span class="icon ion-ios-link"></span>
+                                            </a>
+                                        </span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="col-md-4">
+                                        <code>fileHash:         <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+</code>
+                                    </td>
+                                </tr>
+
+
+                                    <tr>
+                                        <td class="col-md-4">
+                                            <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                                        </td>
+                                    </tr>
+
+
+
+
+
+                        </tbody>
+                    </table>
+                    <table class="table table-sm table-bordered">
+                        <tbody>
+                                <tr>
+                                    <td class="col-md-4">
+                                        <a name="filePath"></a>
+                                        <span class="name "><b>filePath</b>
+                                            <a href="#filePath">
+                                                <span class="icon ion-ios-link"></span>
+                                            </a>
+                                        </span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="col-md-4">
+                                        <code>filePath:         <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+</code>
+                                    </td>
+                                </tr>
+
+
+                                    <tr>
+                                        <td class="col-md-4">
+                                            <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                                        </td>
+                                    </tr>
+
+
+
+
+
+                        </tbody>
+                    </table>
+                    <table class="table table-sm table-bordered">
+                        <tbody>
+                                <tr>
+                                    <td class="col-md-4">
+                                        <a name="integrityLevel"></a>
+                                        <span class="name "><b>integrityLevel</b>
+                                            <a href="#integrityLevel">
+                                                <span class="icon ion-ios-link"></span>
+                                            </a>
+                                        </span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="col-md-4">
+                                        <code>integrityLevel:         <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+</code>
+                                    </td>
+                                </tr>
+
+
+                                    <tr>
+                                        <td class="col-md-4">
+                                            <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+
+                                        </td>
+                                    </tr>
+
+
+
+
+
+                        </tbody>
+                    </table>
+                    <table class="table table-sm table-bordered">
+                        <tbody>
+                                <tr>
+                                    <td class="col-md-4">
+                                        <a name="name"></a>
+                                        <span class="name "><b>name</b>
+                                            <a href="#name">
+                                                <span class="icon ion-ios-link"></span>
+                                            </a>
+                                        </span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="col-md-4">
+                                        <code>name:         <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+</code>
+                                    </td>
+                                </tr>
+
+
+                                    <tr>
+                                        <td class="col-md-4">
+                                            <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                                        </td>
+                                    </tr>
+
+
+
+
+
+                        </tbody>
+                    </table>
+                    <table class="table table-sm table-bordered">
+                        <tbody>
+                                <tr>
+                                    <td class="col-md-4">
+                                        <a name="pid"></a>
+                                        <span class="name "><b>pid</b>
+                                            <a href="#pid">
+                                                <span class="icon ion-ios-link"></span>
+                                            </a>
+                                        </span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="col-md-4">
+                                        <code>pid:         <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+</code>
+                                    </td>
+                                </tr>
+
+
+                                    <tr>
+                                        <td class="col-md-4">
+                                            <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+
+                                        </td>
+                                    </tr>
+
+
+
+
+
+                        </tbody>
+                    </table>
+                    <table class="table table-sm table-bordered">
+                        <tbody>
+                                <tr>
+                                    <td class="col-md-4">
+                                        <a name="user"></a>
+                                        <span class="name "><b>user</b>
+                                            <a href="#user">
+                                                <span class="icon ion-ios-link"></span>
+                                            </a>
+                                        </span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="col-md-4">
+                                        <code>user:         <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+</code>
+                                    </td>
+                                </tr>
+
+
+                                    <tr>
+                                        <td class="col-md-4">
+                                            <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                                        </td>
+                                    </tr>
+
+
+
+
+
+                        </tbody>
+                    </table>
+            </section>
+    </div>
+
+
+    <div class="tab-pane fade  tab-source-code" id="source">
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { HttpException, HttpStatus, Injectable, Logger } from &#x27;@nestjs/common&#x27;;
+// import bencode from &#x27;bencode&#x27;;
+import { OpensearchClient } from &#x27;nestjs-opensearch&#x27;;
+import { CachingService } from &#x27;src/caching/caching.service&#x27;;
+import { ISearchQueryRequestPayload } from &#x27;./dto/open-search-query.dto&#x27;;
+import { OpenSearchClientProvider } from &#x27;./opensearch-client.provider&#x27;;
+
+type MappingProperties &#x3D; {
+  [key: string]: {
+    type: string;
+    properties?: MappingProperties;
+  };
+};
+
+interface MappingInput {
+  mappings: {
+    properties: MappingProperties;
+  };
+}
+
+interface Output {
+  label: string;
+  name: string;
+  type: string;
+}
+
+interface ProcessNode {
+  pid: number;
+  name: string;
+  cmd: string;
+  filePath: string;
+  fileHash: string;
+  user: string;
+  integrityLevel: number;
+  children: ProcessNode[];
+}
+@Injectable()
+export class OpenSearchService {
+  private readonly logger &#x3D; new Logger(OpenSearchService.name);
+  private searchClient: OpensearchClient | undefined;
+  private currentClusterUrl: string | undefined;
+
+  private userId: string | undefined;
+
+  public constructor(
+    private readonly opensearchClientProvider: OpenSearchClientProvider,
+    private cachingService: CachingService,
+  ) {}
+
+  /**
+   * Get the current user ID
+   * @returns The user ID or undefined if not available
+   */
+  public getCurrentUserId(): string | undefined {
+    return this.userId;
+  }
+  
+  /**
+   * Set the user ID - should be called from controllers with access to the request object
+   * @param userId The user ID to set
+   */
+  public setUserId(userId: string): void {
+    if (this.userId !&#x3D;&#x3D; userId) {
+      this.userId &#x3D; userId;
+      this.logger.log(&#x60;User ID set to: ${userId}&#x60;);
+      // Force client refresh when user ID changes
+      this.searchClient &#x3D; undefined;
+    }
+  }
+
+  // async singleDataIngestion(input: any): Promise&lt;any&gt; {
+  //   this.logger.log(
+  //     &#x60;Inside singleUpload() Method | Ingesting single data with index ${input.indexName} &#x60;,
+  //   );
+
+  //   const data &#x3D; input.data[0];
+
+  //   try {
+  //     const res &#x3D; await this.searchClient.index({
+  //       id: data.id,
+  //       index: input.indexName,
+  //       body: data,
+  //     });
+  //     return res.body;
+  //   } catch (err) {
+  //     this.logger.error(&#x60;Exception occurred : ${err})&#x60;);
+  //     return {
+  //       httpCode: 500,
+  //       error: err,
+  //     };
+  //   }
+  // }
+
+  /**
+   * Update the OpenSearch client based on the current user ID
+   */
+  private async updateClientFromUserId(): Promise&lt;void&gt; {
+    // Get the cluster URL first
+    this.currentClusterUrl &#x3D; await this.opensearchClientProvider.getNodeUrl(this.userId);
+    
+    // Then get the client
+    this.searchClient &#x3D; await this.opensearchClientProvider.getClient(this.userId);
+    this.logger.log(&#x60;OpenSearch client updated for user: ${this.userId || &#x27;default&#x27;} with cluster: ${this.currentClusterUrl}&#x60;);
+  }
+
+  /**
+   * Get the current OpenSearch client
+   * @returns The configured OpenSearch client
+   */
+  /**
+   * Ensures that both the client and cluster URL are initialized
+   * This is needed before checking cache to avoid using &#x27;default&#x27; as cluster URL
+   */
+  private async ensureClientAndClusterUrl(): Promise&lt;void&gt; {
+    if (!this.currentClusterUrl || !this.searchClient) {
+      await this.updateClientFromUserId();
+    }
+  }
+
+  private async getClient(): Promise&lt;OpensearchClient&gt; {
+    if (!this.searchClient) {
+      // Initialize with client based on user ID if available
+      await this.updateClientFromUserId();
+    }
+    return this.searchClient as OpensearchClient;
+  }
+
+  async searchByQuery(input: ISearchQueryRequestPayload): Promise&lt;any&gt; {
+    this.logger.log(&#x60;Inside searchByQuery() Method&#x60;);
+    let body: any;
+
+    this.logger.log(
+      &#x60;Searching for query: ${input.query} in the indexes : ${input?.indexes?.join(&#x27;,&#x27;)} &#x60;,
+    );
+    // eslint-disable-next-line prefer-const
+    body &#x3D; {
+      ...(input.options ?? {}),
+      aggs: input.aggs ?? {},
+      query: input.query,
+    };
+
+    const msearchRequest: any &#x3D; [];
+
+    input.indexes.map((index) &#x3D;&gt; {
+      msearchRequest.push({ index: index });
+      msearchRequest.push({ ...body });
+    });
+
+    try {
+      // Ensure we have the client and cluster URL before checking cache
+      // This makes sure this.currentClusterUrl is populated
+      await this.ensureClientAndClusterUrl();
+      
+      // Create a cache key that includes the cluster URL to avoid conflicts
+      const cacheKey &#x3D; {
+        query: msearchRequest,
+        clusterUrl: this.currentClusterUrl || &#x27;default&#x27;
+      };
+      
+      this.logger.log(&#x60;Checking cache with cluster URL: ${this.currentClusterUrl}&#x60;);
+      const cacheData &#x3D; await this.cachingService.getCacheByQuery(cacheKey);
+
+      if (cacheData !&#x3D;&#x3D; null) {
+        this.logger.log(&#x60;Returning data from cache for cluster: ${this.currentClusterUrl}&#x60;);
+        return cacheData;
+      }
+      this.logger.log(&#x60;Reading data from opensearch&#x60;);
+      const client &#x3D; await this.getClient(); // Will use the already initialized client
+      const res &#x3D; await client.msearch({
+        body: msearchRequest,
+      });
+
+      // this.logger.log(&#x60;Res&#x60;, res);
+
+      if (res.statusCode &#x3D;&#x3D; 200) {
+        this.logger.log(&#x60;Saving data to redis cache for cluster: ${this.currentClusterUrl}&#x60;);
+        // Use the same cache key structure for saving
+        const cacheKey &#x3D; {
+          query: msearchRequest,
+          clusterUrl: this.currentClusterUrl || &#x27;default&#x27;
+        };
+        await this.cachingService.setCacheByQuery(cacheKey, res);
+      }
+
+      return res;
+    } catch (error) {
+      this.logger.error(
+        &#x60;Exception occurred while doing : ${JSON.stringify(error?.name)})&#x60;,
+      );
+
+      // return error
+
+      throw new Error(
+        &#x60;Exception occurred while doing : ${JSON.stringify(error?.name)})&#x60;,
+      );
+    }
+  }
+
+  async aggregateQuery(input: any): Promise&lt;any&gt; {
+    // console.log(JSON.stringify(input));
+
+    this.logger.log(&#x60;Inside aggregateQuery() Method&#x60;);
+    try {
+      // Ensure we have the client and cluster URL before checking cache
+      await this.ensureClientAndClusterUrl();
+      
+      // Create a cache key that includes the cluster URL
+      const cacheKey &#x3D; {
+        query: input,
+        clusterUrl: this.currentClusterUrl || &#x27;default&#x27;
+      };
+      
+      this.logger.log(&#x60;Checking aggregate cache with cluster URL: ${this.currentClusterUrl}&#x60;);
+      const cacheData &#x3D; await this.cachingService.getCacheByQuery(cacheKey);
+      if (cacheData !&#x3D;&#x3D; null) {
+        this.logger.log(&#x60;Returning data from cache for cluster: ${this.currentClusterUrl}&#x60;);
+        return cacheData;
+      } else {
+        this.logger.log(&#x60;Reading data from opensearch&#x60;);
+        const client &#x3D; await this.getClient();
+        const res &#x3D; await client.msearch({
+          body: input,
+        });
+
+        if (res.statusCode &#x3D;&#x3D; 200) {
+          this.logger.log(&#x60;Saving data to redis cache for cluster: ${this.currentClusterUrl}&#x60;);
+          await this.cachingService.setCacheByQuery(cacheKey, res);
+          return res;
+        } else {
+          // return res;
+          new HttpException(
+            &#x27;Unable to process&#x27;,
+            HttpStatus.INTERNAL_SERVER_ERROR,
+          );
+        }
+      }
+    } catch (error) {
+      this.logger.error(
+        &#x60;Exception occurred while doing : ${JSON.stringify(error?.name)})&#x60;,
+      );
+      return error
+      new HttpException(&#x27;Timeout&#x27;, HttpStatus.GATEWAY_TIMEOUT);
+    }
+  }
+
+  async getFields(): Promise&lt;any&gt; {
+    // Ensure we have the client and cluster URL before checking cache
+    await this.ensureClientAndClusterUrl();
+    
+    // Create a cache key that includes the cluster URL
+    const baseCacheKey &#x3D; {
+      index: &#x27;esdl-alerts-*&#x27;,
+      type: &#x27;get-fileds&#x27;,
+    };
+    
+    const cacheKey &#x3D; {
+      query: baseCacheKey,
+      clusterUrl: this.currentClusterUrl || &#x27;default&#x27;
+    };
+    
+    this.logger.log(&#x60;Checking fields cache with cluster URL: ${this.currentClusterUrl}&#x60;);
+    const cacheData &#x3D; await this.cachingService.getCacheByQuery(cacheKey);
+    if (cacheData) {
+      this.logger.log(&#x60;Returning fields data from cache for cluster: ${this.currentClusterUrl}&#x60;);
+      return cacheData;
+    } else {
+      const client &#x3D; await this.getClient();
+      const data &#x3D; await client.indices.getMapping({
+        index: &#x27;&#x27;,
+      });
+
+      // console.log(&#x27;data&#x27;, data?.body[&#x27;esdl-alerts-4.x-2024.11.05&#x27;]);
+      const keys &#x3D; Object.keys(data?.body);
+
+      // return data?.body[keys[keys.length - 1]];
+
+      const options &#x3D; await Promise.all(
+        this.convertMappingsToOutput(data?.body[keys[keys.length - 1]]),
+      );
+      if (options.length) {
+        this.logger.log(&#x60;Saving fields data to redis cache for cluster: ${this.currentClusterUrl}&#x60;);
+        await this.cachingService.setCacheByQuery(cacheKey,options);
+      }
+
+      return options;
+    }
+
+    // return this.searchClient.indices.getMapping({
+    //   index: &#x27;esdl-archives-4.x-2024.07.01&#x27;,
+    // });
+  }
+
+  // conversion functions
+
+  private convertMappingsToOutput(input: MappingInput): Output[] {
+    const result: Output[] &#x3D; [];
+
+    function processProperties(
+      properties: MappingProperties,
+      parentKey: string &#x3D; &#x27;&#x27;,
+    ): void {
+      for (const key in properties) {
+        const currentProperty &#x3D; properties[key];
+        const currentKey &#x3D; parentKey ? &#x60;${parentKey}.${key}&#x60; : key;
+
+        if (currentProperty.properties) {
+          // If there are nested properties, recursively process them
+          processProperties(currentProperty.properties, currentKey);
+        } else {
+          // Add the current property to the result
+          result.push({
+            label: currentKey,
+            name: currentKey,
+            type: currentProperty.type,
+          });
+        }
+      }
+    }
+
+    // Start processing the top-level properties
+    processProperties(input.mappings.properties);
+
+    return result;
+  }
+
+
+
+  async createProcessTree(logs: any[]): Promise&lt;Record&lt;string, ProcessNode[]&gt;&gt; {
+    const processMap: Record&lt;string, Record&lt;number, ProcessNode&gt;&gt; &#x3D; {};
+
+    // Step 1: Organize logs by tenant/endpoint
+    logs.forEach(log &#x3D;&gt; {
+      const agentGuid &#x3D; log.data.endpoint_agentGuid;
+      if (!processMap[agentGuid]) processMap[agentGuid] &#x3D; {};
+
+      const parentPid &#x3D; log.data.parentPid;
+      const processPid &#x3D; log.data.processPid;
+
+      // Create parent node if missing
+      if (parentPid &amp;&amp; !processMap[agentGuid][parentPid]) {
+        processMap[agentGuid][parentPid] &#x3D; {
+          pid: parentPid,
+          name: log.data.parentName,
+          cmd: log.data.parentCmd,
+          filePath: log.data.parentFilePath,
+          fileHash: log.data.parentFileHash,
+          user: log.data.parentUser,
+          integrityLevel: log.data.parentIntegrityLevel || 0,
+          children: []
+        };
+      }
+
+      // Create process node
+      if (!processMap[agentGuid][processPid]) {
+        processMap[agentGuid][processPid] &#x3D; {
+          pid: processPid,
+          name: log.data.processName,
+          cmd: log.data.processCmd,
+          filePath: log.data.processFilePath,
+          fileHash: log.data.processFileHash,
+          user: log.data.processUser,
+          integrityLevel: log.data.integrityLevel || 0,
+          children: []
+        };
+      }
+
+      // Link child to parent
+      if (parentPid) {
+        processMap[agentGuid][parentPid].children.push(processMap[agentGuid][processPid]);
+      }
+    });
+
+    // Step 2: Extract trees per endpoint
+    const processTrees: Record&lt;string, ProcessNode[]&gt; &#x3D; {};
+    Object.keys(processMap).forEach(agentGuid &#x3D;&gt; {
+      processTrees[agentGuid] &#x3D; Object.values(processMap[agentGuid]).filter(node &#x3D;&gt; !logs.some(log &#x3D;&gt; log.data.processPid &#x3D;&#x3D;&#x3D; node.pid));
+    });
+
+    return processTrees;
+  }
+}
+</code></pre>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+          <label class="dark-mode-switch">
+               <input type="checkbox">
+               <span class="slider">
+                    <svg class="slider-icon" viewBox="0 0 24 24" fill="none" height="20" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" width="20" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"></path>
+                    </svg>
+               </span>
+          </label>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 1;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'interface';
+            var COMPODOC_CURRENT_PAGE_URL = 'ProcessNode.html';
+            var MAX_SEARCH_RESULTS = 15;
+       </script>
+
+       <script>
+               $darkModeToggleSwitchers = document.querySelectorAll('.dark-mode-switch input');
+               checkToggle(darkModeState);
+               if ($darkModeToggleSwitchers.length > 0) {
+                    for (var i = 0; i < $darkModeToggleSwitchers.length; i++) {
+                         $darkModeToggleSwitchers[i].addEventListener('change', function (event) {
+                              darkModeState = !darkModeState;
+                              toggleDarkMode(darkModeState);
+                         });
+                    }
+               }
+          </script>
+
+       <script src="../js/libs/custom-elements.min.js"></script>
+       <script src="../js/libs/lit-html.js"></script>
+
+       <script src="../js/menu-wc.js" defer></script>
+       <script nomodule src="../js/menu-wc_es5.js" defer></script>
+
+       <script src="../js/libs/bootstrap-native.js"></script>
+
+       <script src="../js/libs/es6-shim.min.js"></script>
+       <script src="../js/libs/EventDispatcher.js"></script>
+       <script src="../js/libs/promise.min.js"></script>
+
+       <script src="../js/compodoc.js"></script>
+
+       <script src="../js/tabs.js"></script>
+       <script src="../js/menu.js"></script>
+       <script src="../js/libs/clipboard.min.js"></script>
+       <script src="../js/libs/prism.js"></script>
+       <script src="../js/sourceCode.js"></script>
+          <script src="../js/search/search.js"></script>
+          <script src="../js/search/lunr.min.js"></script>
+          <script src="../js/search/search-lunr.js"></script>
+          <script src="../js/search/search_index.js"></script>
+       <script src="../js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>

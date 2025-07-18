@@ -1,0 +1,29 @@
+import { DashboardCategory } from "./dashboard-category"
+
+model Dashboard {
+    id                  String             @id @default(auto()) @map("_id") @db.ObjectId
+    name                String
+    tags                String[]
+    type                String?
+    isPublic            Boolean            @default(false)
+    ownerId             String?            @db.ObjectId
+    dashboardCategoryId String             @db.ObjectId
+    parentId            String?            @db.ObjectId
+    parent              Dashboard?         @relation("DashboardParent", fields: [parentId], references: [id], onDelete: NoAction, onUpdate: NoAction)
+    children            Dashboard[]        @relation("DashboardParent")
+    dashboardCategory   DashboardCategory? @relation(fields: [dashboardCategoryId], references: [id])
+    elements            DashboardElement[]
+    //timestamp
+    createdAt           DateTime           @default(now())
+    updatedAt           DateTime           @updatedAt
+}
+
+type DashboardElement {
+    key      String?
+    x        Int
+    y        Int
+    w        Int
+    h        Int
+    widgetId String? @db.ObjectId
+    widget   Json?
+}

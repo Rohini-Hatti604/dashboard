@@ -1,0 +1,727 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>@clean-start-dashboard/api documentation</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+	   <link rel="stylesheet" href="../styles/style.css">
+        <link rel="stylesheet" href="../styles/dark.css">
+    </head>
+    <body>
+          <script>
+               // Blocking script to avoid flickering dark mode
+               // Dark mode toggle button
+               var useDark = window.matchMedia('(prefers-color-scheme: dark)');
+               var darkModeState = useDark.matches;
+               var $darkModeToggleSwitchers = document.querySelectorAll('.dark-mode-switch input');
+               var $darkModeToggles = document.querySelectorAll('.dark-mode-switch');
+               var darkModeStateLocal = localStorage.getItem('compodoc_darkmode-state');
+
+               function checkToggle(check) {
+                    for (var i = 0; i < $darkModeToggleSwitchers.length; i++) {
+                         $darkModeToggleSwitchers[i].checked = check;
+                    }
+               }
+
+               function toggleDarkMode(state) {
+                    if (window.localStorage) {
+                         localStorage.setItem('compodoc_darkmode-state', state);
+                    }
+
+                    checkToggle(state);
+
+                    const hasClass = document.body.classList.contains('dark');
+
+                    if (state) {
+                         for (var i = 0; i < $darkModeToggles.length; i++) {
+                              $darkModeToggles[i].classList.add('dark');
+                         }
+                         if (!hasClass) {
+                              document.body.classList.add('dark');
+                         }
+                    } else {
+                         for (var i = 0; i < $darkModeToggles.length; i++) {
+                              $darkModeToggles[i].classList.remove('dark');
+                         }
+                         if (hasClass) {
+                              document.body.classList.remove('dark');
+                         }
+                    }
+               }
+
+               useDark.addEventListener('change', function (evt) {
+                    toggleDarkMode(evt.matches);
+               });
+               if (darkModeStateLocal) {
+                    darkModeState = darkModeStateLocal === 'true';
+               }
+               toggleDarkMode(darkModeState);
+          </script>
+
+        <div class="navbar navbar-default navbar-fixed-top d-md-none p-0">
+               <div class="d-flex">
+                    <a href="../" class="navbar-brand">@clean-start-dashboard/api documentation</a>
+                    <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+               </div>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+                <div id="book-search-input" role="search"><input type="text" placeholder="Type to search"></div>            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="d-none d-md-block menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content injectable">
+                   <div class="content-data">
+
+
+
+
+
+
+
+
+<ol class="breadcrumb">
+  <li class="breadcrumb-item">Injectables</li>
+  <li class="breadcrumb-item" >OpenSearchClientProvider</li>
+</ol>
+
+<ul class="nav nav-tabs" role="tablist">
+        <li class="nav-item">
+            <a href="#info" 
+                class="nav-link"
+                class="nav-link active"
+                role="tab" id="info-tab" data-bs-toggle="tab" data-link="info">Info</a>
+        </li>
+        <li class="nav-item">
+            <a href="#source" 
+                class="nav-link"
+                
+                role="tab" id="source-tab" data-bs-toggle="tab" data-link="source">Source</a>
+        </li>
+</ul>
+
+<div class="tab-content">
+    <div class="tab-pane fade active in" id="info">
+        <p class="comment">
+            <h3>File</h3>
+        </p>
+        <p class="comment">
+            <code>src/open-search/opensearch-client.provider.ts</code>
+        </p>
+
+
+
+
+
+            <section data-compodoc="block-index">
+    <h3 id="index">Index</h3>
+    <table class="table table-sm table-bordered index-table">
+        <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Properties</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                    <span class="modifier">Private</span>
+                                <a href="#cachedClient" >cachedClient</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Private</span>
+                                <a href="#cachedProfileId" >cachedProfileId</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Private</span>
+                                    <span class="modifier">Readonly</span>
+                                <a href="#logger" >logger</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Methods</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                    <span class="modifier">Public</span>
+                                    <span class="modifier">Async</span>
+                                <a href="#getClient" >getClient</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                    <span class="modifier">Async</span>
+                                <a href="#getNodeUrl" >getNodeUrl</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+            <section data-compodoc="block-constructor">
+    <h3 id="constructor">Constructor</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+<code>constructor(configService: ConfigService, dashboardProfileService?: <a href="../injectables/DashboardProfileService.html" target="_self">DashboardProfileService</a>)</code>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="11" class="link-to-prism">src/open-search/opensearch-client.provider.ts:11</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                            <div>
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                    <td>Type</td>
+                                                <td>Optional</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>configService</td>
+                                                  
+                                                        <td>
+                                                                    <code>ConfigService</code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>dashboardProfileService</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/DashboardProfileService.html" target="_self" >DashboardProfileService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            Yes
+                                                    </td>
+                                                    
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+</section>
+
+            <section data-compodoc="block-methods">
+    
+    <h3 id="methods">
+        Methods
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getClient"></a>
+                    <span class="name">
+                            <span class="modifier">Public</span>
+                            <span class="modifier">Async</span>
+                        <span ><b>getClient</b></span>
+                        <a href="#getClient"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>getClient(userId?: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="51"
+                                    class="link-to-prism">src/open-search/opensearch-client.provider.ts:51</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>userId</td>
+                                            <td>
+                                                            <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                            </td>
+
+                                            <td>
+                                                    Yes
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>    <code>Promise&lt;OpensearchClient&gt;</code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getNodeUrl"></a>
+                    <span class="name">
+                            <span class="modifier">Public</span>
+                            <span class="modifier">Async</span>
+                        <span ><b>getNodeUrl</b></span>
+                        <a href="#getNodeUrl"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>getNodeUrl(userId?: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="27"
+                                    class="link-to-prism">src/open-search/opensearch-client.provider.ts:27</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Get the OpenSearch node URL for a specific profile</p>
+</div>
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                                <td>Description</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>userId</td>
+                                            <td>
+                                                            <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                            </td>
+
+                                            <td>
+                                                    Yes
+                                            </td>
+
+
+                                            <td>
+                                                    <p>The user ID to get the URL for</p>
+
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>    <code>Promise&lt;string | undefined&gt;</code>
+
+                        </div>
+                            <div class="io-description">
+                                <p>The node URL as a string</p>
+
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>
+            <section data-compodoc="block-properties">
+    
+    <h3 id="inputs">
+        Properties
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="cachedClient"></a>
+                    <span class="name">
+                            <span class="modifier">Private</span>
+                        <span ><b>cachedClient</b></span>
+                        <a href="#cachedClient"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>OpensearchClient | null</code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>null</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="10" class="link-to-prism">src/open-search/opensearch-client.provider.ts:10</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="cachedProfileId"></a>
+                    <span class="name">
+                            <span class="modifier">Private</span>
+                        <span ><b>cachedProfileId</b></span>
+                        <a href="#cachedProfileId"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>string | null</code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>null</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="11" class="link-to-prism">src/open-search/opensearch-client.provider.ts:11</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="logger"></a>
+                    <span class="name">
+                            <span class="modifier">Private</span>
+                            <span class="modifier">Readonly</span>
+                        <span ><b>logger</b></span>
+                        <a href="#logger"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>new Logger(OpenSearchClientProvider.name)</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="9" class="link-to-prism">src/open-search/opensearch-client.provider.ts:9</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+</section>
+
+    </div>
+
+
+    <div class="tab-pane fade  tab-source-code" id="source">
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Injectable, Logger, Optional } from &#x27;@nestjs/common&#x27;;
+import { ConfigService } from &#x27;@nestjs/config&#x27;;
+import { Client } from &#x27;@opensearch-project/opensearch&#x27;;
+import { OpensearchClient } from &#x27;nestjs-opensearch&#x27;;
+import { DashboardProfileService } from &#x27;../dashboard-profile/dashboard-profile.service&#x27;;
+
+@Injectable()
+export class OpenSearchClientProvider {
+  private readonly logger &#x3D; new Logger(OpenSearchClientProvider.name);
+  private cachedClient: OpensearchClient | null &#x3D; null;
+  private cachedProfileId: string | null &#x3D; null;
+
+  constructor(
+    private readonly configService: ConfigService,
+    @Optional() private readonly dashboardProfileService?: DashboardProfileService,
+  ) {
+    if (!this.dashboardProfileService) {
+      this.logger.warn(&#x27;DashboardProfileService not available - dynamic configuration will not work&#x27;);
+    }
+  }
+
+  /**
+   * Get the OpenSearch node URL for a specific profile
+   * @param userId The user ID to get the URL for
+   * @returns The node URL as a string
+   */
+  public async getNodeUrl(userId?: string): Promise&lt;string | undefined&gt; {
+    let nodeUrl: string | undefined;
+
+    // Try to get configuration from dashboard profile
+    if (userId &amp;&amp; this.dashboardProfileService) {
+      try {
+        const profile &#x3D; await this.dashboardProfileService.getById(userId);
+        if (profile?.opensearchConfig) {
+          const config &#x3D; profile.opensearchConfig as Record&lt;string, unknown&gt;;
+          nodeUrl &#x3D; config.node_url as string | undefined;
+        }
+      } catch (error) {
+        this.logger.error(&#x60;Error getting dashboard profile: ${error.message}&#x60;);
+      }
+    }
+
+    // Fall back to environment variables if needed
+    if (!nodeUrl) {
+      nodeUrl &#x3D; this.configService.get&lt;string&gt;(&#x27;OPENSEARCH_NODE&#x27;);
+    }
+
+    return nodeUrl;
+  }
+
+  public async getClient(userId?: string): Promise&lt;OpensearchClient&gt; {
+    // If we have a cached client for the same profile, return it
+    if (this.cachedClient &amp;&amp; userId &#x3D;&#x3D;&#x3D; this.cachedProfileId) {
+      return this.cachedClient;
+    }
+
+    let nodeUrl: string | undefined;
+    let username: string | undefined;
+    let password: string | undefined;
+    let rejectUnauthorized &#x3D; false; // Initialize with default value
+    let minPoolSize &#x3D; 8;
+    let maxPoolSize &#x3D; 25;
+    let maxRetries &#x3D; 5;
+    let requestTimeout &#x3D; 1000000000;
+
+    // Try to get configuration from dashboard profile
+    if (userId &amp;&amp; this.dashboardProfileService) {
+      try {
+        const profile &#x3D; await this.dashboardProfileService.getById(userId);
+        if (profile?.opensearchConfig) {
+          const config &#x3D; profile.opensearchConfig as Record&lt;string, unknown&gt;;
+          nodeUrl &#x3D; config.node_url as string | undefined;
+          username &#x3D; config.username as string | undefined;
+          password &#x3D; config.password as string | undefined;
+          rejectUnauthorized &#x3D; config.rejectUnauthorized !&#x3D;&#x3D; undefined 
+            ? Boolean(config.rejectUnauthorized) 
+            : false;
+          
+          this.logger.log(&#x60;Using OpenSearch configuration from profile: ${userId}&#x60;);
+        }
+      } catch (error) {
+        const errorMessage &#x3D; error instanceof Error ? error.message : String(error);
+        this.logger.error(&#x60;Failed to get dashboard profile: ${errorMessage}&#x60;);
+      }
+    }
+
+    // Fall back to environment variables if needed
+    if (!nodeUrl) {
+      nodeUrl &#x3D; this.configService.get&lt;string&gt;(&#x27;OPENSEARCH_NODE&#x27;);
+      username &#x3D; this.configService.get&lt;string&gt;(&#x27;OPENSEARCH_USERNAME&#x27;);
+      password &#x3D; this.configService.get&lt;string&gt;(&#x27;OPENSEARCH_PASSWORD&#x27;);
+      rejectUnauthorized &#x3D; this.configService.get&lt;boolean&gt;(&#x27;OPENSEARCH_REJECT_UNAUTHORIZED&#x27;, false);
+      minPoolSize &#x3D; this.configService.get(&#x27;OPENSEARCH_POOL_MIN&#x27;, 8);
+      maxPoolSize &#x3D; this.configService.get(&#x27;OPENSEARCH_POOL_MAX&#x27;, 25);
+      maxRetries &#x3D; this.configService.get(&#x27;OPENSEARCH_POOL_MAX_RETRIES&#x27;, 5);
+      requestTimeout &#x3D; this.configService.get(&#x27;OPENSEARCH_REQUEST_TIMEOUT&#x27;, 1000000000);
+      
+      this.logger.log(&#x27;Using OpenSearch configuration from environment variables&#x27;);
+    }
+
+    if (!nodeUrl) {
+      throw new Error(&#x27;OpenSearch node URL not found in profile or environment variables&#x27;);
+    }
+
+    const clientOptions: { 
+      node: string; 
+      auth?: { username: string; password: string };
+      ssl?: { rejectUnauthorized: boolean };
+      pool?: { min: number; max: number; maxRetries: number; requestTimeout: number };
+    } &#x3D; {
+      node: nodeUrl,
+      auth: username &amp;&amp; password ? {
+        username,
+        password,
+      } : undefined,
+      ssl: {
+        rejectUnauthorized,
+     },
+     pool: {
+      min: minPoolSize,
+      max: maxPoolSize,
+      maxRetries: maxRetries,
+      requestTimeout: requestTimeout,
+    },
+    };
+    
+    const client &#x3D; new Client(clientOptions) as OpensearchClient;
+
+    if (userId) {
+      this.cachedProfileId &#x3D; userId;
+      this.cachedClient &#x3D; client;
+    }
+    this.logger.log(&#x60;OpenSearch client created for profile: ${userId || &#x27;default&#x27;}&#x60;);
+    this.logger.log(&#x60;OpenSearch client options: ${JSON.stringify(clientOptions)}&#x60;);
+    this.logger.log(&#x60;OpenSearch client node: ${nodeUrl}&#x60;);
+
+    return client;
+  }
+}
+</code></pre>
+    </div>
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+          <label class="dark-mode-switch">
+               <input type="checkbox">
+               <span class="slider">
+                    <svg class="slider-icon" viewBox="0 0 24 24" fill="none" height="20" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" width="20" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"></path>
+                    </svg>
+               </span>
+          </label>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 1;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'injectable';
+            var COMPODOC_CURRENT_PAGE_URL = 'OpenSearchClientProvider.html';
+            var MAX_SEARCH_RESULTS = 15;
+       </script>
+
+       <script>
+               $darkModeToggleSwitchers = document.querySelectorAll('.dark-mode-switch input');
+               checkToggle(darkModeState);
+               if ($darkModeToggleSwitchers.length > 0) {
+                    for (var i = 0; i < $darkModeToggleSwitchers.length; i++) {
+                         $darkModeToggleSwitchers[i].addEventListener('change', function (event) {
+                              darkModeState = !darkModeState;
+                              toggleDarkMode(darkModeState);
+                         });
+                    }
+               }
+          </script>
+
+       <script src="../js/libs/custom-elements.min.js"></script>
+       <script src="../js/libs/lit-html.js"></script>
+
+       <script src="../js/menu-wc.js" defer></script>
+       <script nomodule src="../js/menu-wc_es5.js" defer></script>
+
+       <script src="../js/libs/bootstrap-native.js"></script>
+
+       <script src="../js/libs/es6-shim.min.js"></script>
+       <script src="../js/libs/EventDispatcher.js"></script>
+       <script src="../js/libs/promise.min.js"></script>
+
+       <script src="../js/compodoc.js"></script>
+
+       <script src="../js/tabs.js"></script>
+       <script src="../js/menu.js"></script>
+       <script src="../js/libs/clipboard.min.js"></script>
+       <script src="../js/libs/prism.js"></script>
+       <script src="../js/sourceCode.js"></script>
+          <script src="../js/search/search.js"></script>
+          <script src="../js/search/lunr.min.js"></script>
+          <script src="../js/search/search-lunr.js"></script>
+          <script src="../js/search/search_index.js"></script>
+       <script src="../js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>

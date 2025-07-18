@@ -1,0 +1,11 @@
+import { Dashboard } from "dashboard"
+
+model DashboardProfile {
+    id                    String   @id @default(auto()) @map("_id") @db.ObjectId
+    favouriteDashboardIds String[] @db.ObjectId
+    favouriteDashboards   Json?
+    defaultDashboards     Json?
+    user                  Json?
+    opensearchConfig      Json?
+    defaultDashboardId    String?  @db.ObjectId
+}

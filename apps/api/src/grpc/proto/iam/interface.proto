@@ -1,0 +1,34 @@
+syntax = "proto3"; // Specifies the version of Protocol Buffers used.
+
+import "google/protobuf/any.proto"; // Imports the Any type from Google's protobuf library, though it's not being used in this file.
+
+package interface; // Defines the package for the proto file. This can be useful for namespacing and generating code in different languages.
+
+
+// Service definition for InterfaceService.
+// This service provides an RPC method to send requests and receive responses.
+
+service InterfaceService {
+    // Defines an RPC method named 'SendRequest'.
+    // It takes an 'InterfaceRequest' message as input and returns an 'InterfaceResponse' message as output.
+    rpc SendRequest(InterfaceRequest) returns (InterfaceResponse);
+}
+
+// Message structure for sending requests.
+// This message contains information that the client will pass to the gRPC bus.
+message InterfaceRequest {
+
+
+    string app_id = 1; // Unique identifier for the app making the request (e.g., "app1", "app2").
+    string resource_path = 2; // Specifies the resource path within the target service (e.g., "get_user_detail").
+    string request_data = 3;  // The actual data being sent with the request. This is a serialized string (e.g., a JSON payload).
+}
+
+// Message structure for the response returned by the service.
+// This message contains the status and data returned from the target service after forwarding.
+
+message InterfaceResponse {
+    bool status = 1; // Indicates if the request was successful or not (true for success, false for failure).
+    string message = 2; // Optional message giving more context about the response (e.g., error details, success message).
+    string response_data = 3; // Serialized response data (e.g., JSON string), which is returned from the target service.
+}

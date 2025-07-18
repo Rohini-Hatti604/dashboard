@@ -1,0 +1,1200 @@
+<!doctype html>
+<html class="no-js" lang="">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="x-ua-compatible" content="ie=edge" />
+    <title>@clean-start-dashboard/api documentation</title>
+    <meta name="description" content="" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <link rel="icon" type="image/x-icon" href="./images/favicon.ico" />
+    <link rel="stylesheet" href="./styles/style.css" />
+    <link rel="stylesheet" href="./styles/dark.css" />
+  </head>
+  <body>
+    <script>
+      // Blocking script to avoid flickering dark mode
+      // Dark mode toggle button
+      var useDark = window.matchMedia('(prefers-color-scheme: dark)');
+      var darkModeState = useDark.matches;
+      var $darkModeToggleSwitchers = document.querySelectorAll(
+        '.dark-mode-switch input',
+      );
+      var $darkModeToggles = document.querySelectorAll('.dark-mode-switch');
+      var darkModeStateLocal = localStorage.getItem('compodoc_darkmode-state');
+
+      function checkToggle(check) {
+        for (var i = 0; i < $darkModeToggleSwitchers.length; i++) {
+          $darkModeToggleSwitchers[i].checked = check;
+        }
+      }
+
+      function toggleDarkMode(state) {
+        if (window.localStorage) {
+          localStorage.setItem('compodoc_darkmode-state', state);
+        }
+
+        checkToggle(state);
+
+        const hasClass = document.body.classList.contains('dark');
+
+        if (state) {
+          for (var i = 0; i < $darkModeToggles.length; i++) {
+            $darkModeToggles[i].classList.add('dark');
+          }
+          if (!hasClass) {
+            document.body.classList.add('dark');
+          }
+        } else {
+          for (var i = 0; i < $darkModeToggles.length; i++) {
+            $darkModeToggles[i].classList.remove('dark');
+          }
+          if (hasClass) {
+            document.body.classList.remove('dark');
+          }
+        }
+      }
+
+      useDark.addEventListener('change', function (evt) {
+        toggleDarkMode(evt.matches);
+      });
+      if (darkModeStateLocal) {
+        darkModeState = darkModeStateLocal === 'true';
+      }
+      toggleDarkMode(darkModeState);
+    </script>
+
+    <div class="navbar navbar-default navbar-fixed-top d-md-none p-0">
+      <div class="d-flex">
+        <a href="./" class="navbar-brand"
+          >@clean-start-dashboard/api documentation</a
+        >
+        <button
+          type="button"
+          class="btn btn-default btn-menu ion-ios-menu"
+          id="btn-menu"
+        ></button>
+      </div>
+    </div>
+
+    <div class="xs-menu menu" id="mobile-menu">
+      <div id="book-search-input" role="search">
+        <input type="text" placeholder="Type to search" />
+      </div>
+      <compodoc-menu></compodoc-menu>
+    </div>
+
+    <div class="container-fluid main">
+      <div class="row main">
+        <div class="d-none d-md-block menu">
+          <compodoc-menu mode="normal"></compodoc-menu>
+        </div>
+        <!-- START CONTENT -->
+        <div class="content coverage">
+          <div class="content-data">
+            <ol class="breadcrumb">
+              <li class="breadcrumb-item">Documentation coverage</li>
+            </ol>
+
+            <div>
+              <img src="./images/coverage-badge-documentation.svg" />
+            </div>
+
+            <table class="table table-bordered coverage" id="coverage-table">
+              <thead class="coverage-header">
+                <tr>
+                  <th>File</th>
+                  <th>Type</th>
+                  <th>Identifier</th>
+                  <th
+                    style="text-align: right"
+                    class="statements"
+                    data-sort-default
+                  >
+                    Statements
+                  </th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr class="low">
+                  <td>
+                    <!-- miscellaneous -->
+                    <a href="./miscellaneous/variables.html#NESTIA_CONFIG"
+                      >nestia.config.ts</a
+                    >
+                  </td>
+                  <td>variable</td>
+                  <td>NESTIA_CONFIG</td>
+                  <td align="right" data-sort="0">
+                    <span class="coverage-percent">0 %</span>
+                    <span class="coverage-count">(0/1)</span>
+                  </td>
+                </tr>
+                <tr class="low">
+                  <td>
+                    <!-- miscellaneous -->
+                    <a href="./controllers/AppController.html"
+                      >src/app.controller.ts</a
+                    >
+                  </td>
+                  <td>controller</td>
+                  <td>AppController</td>
+                  <td align="right" data-sort="0">
+                    <span class="coverage-percent">0 %</span>
+                    <span class="coverage-count">(0/4)</span>
+                  </td>
+                </tr>
+                <tr class="low">
+                  <td>
+                    <!-- miscellaneous -->
+                    <a href="./injectables/AppService.html"
+                      >src/app.service.ts</a
+                    >
+                  </td>
+                  <td>injectable</td>
+                  <td>AppService</td>
+                  <td align="right" data-sort="0">
+                    <span class="coverage-percent">0 %</span>
+                    <span class="coverage-count">(0/2)</span>
+                  </td>
+                </tr>
+                <tr class="low">
+                  <td>
+                    <!-- miscellaneous -->
+                    <a href="./controllers/AuthController.html"
+                      >src/auth/auth.controller.ts</a
+                    >
+                  </td>
+                  <td>controller</td>
+                  <td>AuthController</td>
+                  <td align="right" data-sort="0">
+                    <span class="coverage-percent">0 %</span>
+                    <span class="coverage-count">(0/3)</span>
+                  </td>
+                </tr>
+                <tr class="low">
+                  <td>
+                    <!-- miscellaneous -->
+                    <a href="./injectables/CachingService.html"
+                      >src/caching/caching.service.ts</a
+                    >
+                  </td>
+                  <td>injectable</td>
+                  <td>CachingService</td>
+                  <td align="right" data-sort="0">
+                    <span class="coverage-percent">0 %</span>
+                    <span class="coverage-count">(0/5)</span>
+                  </td>
+                </tr>
+                <tr class="medium">
+                  <td>
+                    <!-- miscellaneous -->
+                    <a href="./interfaces/IAuthHeaders.html"
+                      >src/common/dtos.ts</a
+                    >
+                  </td>
+                  <td>interface</td>
+                  <td>IAuthHeaders</td>
+                  <td align="right" data-sort="33">
+                    <span class="coverage-percent">33 %</span>
+                    <span class="coverage-count">(1/3)</span>
+                  </td>
+                </tr>
+                <tr class="low">
+                  <td>
+                    <!-- miscellaneous -->
+                    <a href="./interfaces/IListEntitiesRequest.html"
+                      >src/common/dtos.ts</a
+                    >
+                  </td>
+                  <td>interface</td>
+                  <td>IListEntitiesRequest</td>
+                  <td align="right" data-sort="0">
+                    <span class="coverage-percent">0 %</span>
+                    <span class="coverage-count">(0/6)</span>
+                  </td>
+                </tr>
+                <tr class="low">
+                  <td>
+                    <!-- miscellaneous -->
+                    <a href="./interfaces/IListEntitiesResponse.html"
+                      >src/common/dtos.ts</a
+                    >
+                  </td>
+                  <td>interface</td>
+                  <td>IListEntitiesResponse</td>
+                  <td align="right" data-sort="0">
+                    <span class="coverage-percent">0 %</span>
+                    <span class="coverage-count">(0/3)</span>
+                  </td>
+                </tr>
+                <tr class="low">
+                  <td>
+                    <!-- miscellaneous -->
+                    <a
+                      href="./miscellaneous/typealiases.html#ComparableAttributes"
+                      >src/common/dtos.ts</a
+                    >
+                  </td>
+                  <td>type alias</td>
+                  <td>ComparableAttributes</td>
+                  <td align="right" data-sort="0">
+                    <span class="coverage-percent">0 %</span>
+                    <span class="coverage-count">(0/1)</span>
+                  </td>
+                </tr>
+                <tr class="low">
+                  <td>
+                    <!-- miscellaneous -->
+                    <a href="./miscellaneous/typealiases.html#EntityFilterInput"
+                      >src/common/dtos.ts</a
+                    >
+                  </td>
+                  <td>type alias</td>
+                  <td>EntityFilterInput</td>
+                  <td align="right" data-sort="0">
+                    <span class="coverage-percent">0 %</span>
+                    <span class="coverage-count">(0/1)</span>
+                  </td>
+                </tr>
+                <tr class="low">
+                  <td>
+                    <!-- miscellaneous -->
+                    <a
+                      href="./miscellaneous/typealiases.html#EntityFilterRecord"
+                      >src/common/dtos.ts</a
+                    >
+                  </td>
+                  <td>type alias</td>
+                  <td>EntityFilterRecord</td>
+                  <td align="right" data-sort="0">
+                    <span class="coverage-percent">0 %</span>
+                    <span class="coverage-count">(0/1)</span>
+                  </td>
+                </tr>
+                <tr class="low">
+                  <td>
+                    <!-- miscellaneous -->
+                    <a href="./miscellaneous/typealiases.html#EntitySortInput"
+                      >src/common/dtos.ts</a
+                    >
+                  </td>
+                  <td>type alias</td>
+                  <td>EntitySortInput</td>
+                  <td align="right" data-sort="0">
+                    <span class="coverage-percent">0 %</span>
+                    <span class="coverage-count">(0/1)</span>
+                  </td>
+                </tr>
+                <tr class="very-good">
+                  <td>
+                    <!-- miscellaneous -->
+                    <a
+                      href="./miscellaneous/functions.html#listRequestToFindManyArgs"
+                      >src/common/utils.ts</a
+                    >
+                  </td>
+                  <td>function</td>
+                  <td>listRequestToFindManyArgs</td>
+                  <td align="right" data-sort="100">
+                    <span class="coverage-percent">100 %</span>
+                    <span class="coverage-count">(1/1)</span>
+                  </td>
+                </tr>
+                <tr class="low">
+                  <td>
+                    <!-- miscellaneous -->
+                    <a href="./miscellaneous/functions.html#nullToUndefined"
+                      >src/common/utils.ts</a
+                    >
+                  </td>
+                  <td>function</td>
+                  <td>nullToUndefined</td>
+                  <td align="right" data-sort="0">
+                    <span class="coverage-percent">0 %</span>
+                    <span class="coverage-count">(0/1)</span>
+                  </td>
+                </tr>
+                <tr class="very-good">
+                  <td>
+                    <!-- miscellaneous -->
+                    <a href="./miscellaneous/typealiases.html#NullToUndefined"
+                      >src/common/utils.ts</a
+                    >
+                  </td>
+                  <td>type alias</td>
+                  <td>NullToUndefined</td>
+                  <td align="right" data-sort="100">
+                    <span class="coverage-percent">100 %</span>
+                    <span class="coverage-count">(1/1)</span>
+                  </td>
+                </tr>
+                <tr class="low">
+                  <td>
+                    <!-- miscellaneous -->
+                    <a href="./controllers/DashboardCategoryController.html"
+                      >src/dashboard-category/dashboard-category.controller.ts</a
+                    >
+                  </td>
+                  <td>controller</td>
+                  <td>DashboardCategoryController</td>
+                  <td align="right" data-sort="0">
+                    <span class="coverage-percent">0 %</span>
+                    <span class="coverage-count">(0/4)</span>
+                  </td>
+                </tr>
+                <tr class="low">
+                  <td>
+                    <!-- miscellaneous -->
+                    <a href="./injectables/DashboardCategoryService.html"
+                      >src/dashboard-category/dashboard-category.service.ts</a
+                    >
+                  </td>
+                  <td>injectable</td>
+                  <td>DashboardCategoryService</td>
+                  <td align="right" data-sort="0">
+                    <span class="coverage-percent">0 %</span>
+                    <span class="coverage-count">(0/6)</span>
+                  </td>
+                </tr>
+                <tr class="low">
+                  <td>
+                    <!-- miscellaneous -->
+                    <a href="./interfaces/ICreateDashboardCategoryRequest.html"
+                      >src/dashboard-category/dto/dashboard-category.dto.ts</a
+                    >
+                  </td>
+                  <td>interface</td>
+                  <td>ICreateDashboardCategoryRequest</td>
+                  <td align="right" data-sort="0">
+                    <span class="coverage-percent">0 %</span>
+                    <span class="coverage-count">(0/1)</span>
+                  </td>
+                </tr>
+                <tr class="low">
+                  <td>
+                    <!-- miscellaneous -->
+                    <a href="./interfaces/IGetDashboardCategory.html"
+                      >src/dashboard-category/dto/dashboard-category.dto.ts</a
+                    >
+                  </td>
+                  <td>interface</td>
+                  <td>IGetDashboardCategory</td>
+                  <td align="right" data-sort="0">
+                    <span class="coverage-percent">0 %</span>
+                    <span class="coverage-count">(0/1)</span>
+                  </td>
+                </tr>
+                <tr class="low">
+                  <td>
+                    <!-- miscellaneous -->
+                    <a href="./interfaces/IGetDashboardCategoryRequest.html"
+                      >src/dashboard-category/dto/dashboard-category.dto.ts</a
+                    >
+                  </td>
+                  <td>interface</td>
+                  <td>IGetDashboardCategoryRequest</td>
+                  <td align="right" data-sort="0">
+                    <span class="coverage-percent">0 %</span>
+                    <span class="coverage-count">(0/2)</span>
+                  </td>
+                </tr>
+                <tr class="low">
+                  <td>
+                    <!-- miscellaneous -->
+                    <a href="./interfaces/IUpdateDashboardCategoryRequest.html"
+                      >src/dashboard-category/dto/dashboard-category.dto.ts</a
+                    >
+                  </td>
+                  <td>interface</td>
+                  <td>IUpdateDashboardCategoryRequest</td>
+                  <td align="right" data-sort="0">
+                    <span class="coverage-percent">0 %</span>
+                    <span class="coverage-count">(0/2)</span>
+                  </td>
+                </tr>
+                <tr class="low">
+                  <td>
+                    <!-- miscellaneous -->
+                    <a href="./controllers/DashboardProfileController.html"
+                      >src/dashboard-profile/dashboard-profile.controller.ts</a
+                    >
+                  </td>
+                  <td>controller</td>
+                  <td>DashboardProfileController</td>
+                  <td align="right" data-sort="0">
+                    <span class="coverage-percent">0 %</span>
+                    <span class="coverage-count">(0/5)</span>
+                  </td>
+                </tr>
+                <tr class="low">
+                  <td>
+                    <!-- miscellaneous -->
+                    <a href="./injectables/DashboardProfileService.html"
+                      >src/dashboard-profile/dashboard-profile.service.ts</a
+                    >
+                  </td>
+                  <td>injectable</td>
+                  <td>DashboardProfileService</td>
+                  <td align="right" data-sort="0">
+                    <span class="coverage-percent">0 %</span>
+                    <span class="coverage-count">(0/7)</span>
+                  </td>
+                </tr>
+                <tr class="low">
+                  <td>
+                    <!-- miscellaneous -->
+                    <a href="./interfaces/IAddToFavouriteRequest.html"
+                      >src/dashboard-profile/dto/dashboard-profile.dto.ts</a
+                    >
+                  </td>
+                  <td>interface</td>
+                  <td>IAddToFavouriteRequest</td>
+                  <td align="right" data-sort="0">
+                    <span class="coverage-percent">0 %</span>
+                    <span class="coverage-count">(0/2)</span>
+                  </td>
+                </tr>
+                <tr class="low">
+                  <td>
+                    <!-- miscellaneous -->
+                    <a href="./interfaces/IGetDashboardProfile.html"
+                      >src/dashboard-profile/dto/dashboard-profile.dto.ts</a
+                    >
+                  </td>
+                  <td>interface</td>
+                  <td>IGetDashboardProfile</td>
+                  <td align="right" data-sort="0">
+                    <span class="coverage-percent">0 %</span>
+                    <span class="coverage-count">(0/1)</span>
+                  </td>
+                </tr>
+                <tr class="low">
+                  <td>
+                    <!-- miscellaneous -->
+                    <a href="./interfaces/ISetDefaultDashbordRequest.html"
+                      >src/dashboard-profile/dto/dashboard-profile.dto.ts</a
+                    >
+                  </td>
+                  <td>interface</td>
+                  <td>ISetDefaultDashbordRequest</td>
+                  <td align="right" data-sort="0">
+                    <span class="coverage-percent">0 %</span>
+                    <span class="coverage-count">(0/2)</span>
+                  </td>
+                </tr>
+                <tr class="low">
+                  <td>
+                    <!-- miscellaneous -->
+                    <a href="./controllers/DashboardController.html"
+                      >src/dashboard/dashboard.controller.ts</a
+                    >
+                  </td>
+                  <td>controller</td>
+                  <td>DashboardController</td>
+                  <td align="right" data-sort="0">
+                    <span class="coverage-percent">0 %</span>
+                    <span class="coverage-count">(0/8)</span>
+                  </td>
+                </tr>
+                <tr class="low">
+                  <td>
+                    <!-- miscellaneous -->
+                    <a href="./injectables/DashboardService.html"
+                      >src/dashboard/dashboard.service.ts</a
+                    >
+                  </td>
+                  <td>injectable</td>
+                  <td>DashboardService</td>
+                  <td align="right" data-sort="0">
+                    <span class="coverage-percent">0 %</span>
+                    <span class="coverage-count">(0/10)</span>
+                  </td>
+                </tr>
+                <tr class="low">
+                  <td>
+                    <!-- miscellaneous -->
+                    <a href="./interfaces/ICreateDashboardRequest.html"
+                      >src/dashboard/dto/dashboard.dto.ts</a
+                    >
+                  </td>
+                  <td>interface</td>
+                  <td>ICreateDashboardRequest</td>
+                  <td align="right" data-sort="0">
+                    <span class="coverage-percent">0 %</span>
+                    <span class="coverage-count">(0/1)</span>
+                  </td>
+                </tr>
+                <tr class="low">
+                  <td>
+                    <!-- miscellaneous -->
+                    <a href="./interfaces/IGetDashboard.html"
+                      >src/dashboard/dto/dashboard.dto.ts</a
+                    >
+                  </td>
+                  <td>interface</td>
+                  <td>IGetDashboard</td>
+                  <td align="right" data-sort="0">
+                    <span class="coverage-percent">0 %</span>
+                    <span class="coverage-count">(0/1)</span>
+                  </td>
+                </tr>
+                <tr class="low">
+                  <td>
+                    <!-- miscellaneous -->
+                    <a href="./interfaces/IGetDashboardRequest.html"
+                      >src/dashboard/dto/dashboard.dto.ts</a
+                    >
+                  </td>
+                  <td>interface</td>
+                  <td>IGetDashboardRequest</td>
+                  <td align="right" data-sort="0">
+                    <span class="coverage-percent">0 %</span>
+                    <span class="coverage-count">(0/2)</span>
+                  </td>
+                </tr>
+                <tr class="low">
+                  <td>
+                    <!-- miscellaneous -->
+                    <a href="./interfaces/IUpdateDashboardRequest.html"
+                      >src/dashboard/dto/dashboard.dto.ts</a
+                    >
+                  </td>
+                  <td>interface</td>
+                  <td>IUpdateDashboardRequest</td>
+                  <td align="right" data-sort="0">
+                    <span class="coverage-percent">0 %</span>
+                    <span class="coverage-count">(0/4)</span>
+                  </td>
+                </tr>
+                <tr class="low">
+                  <td>
+                    <!-- miscellaneous -->
+                    <a href="./miscellaneous/variables.html#Permissions"
+                      >src/decorators/permission.decorator.ts</a
+                    >
+                  </td>
+                  <td>variable</td>
+                  <td>Permissions</td>
+                  <td align="right" data-sort="0">
+                    <span class="coverage-percent">0 %</span>
+                    <span class="coverage-count">(0/1)</span>
+                  </td>
+                </tr>
+                <tr class="low">
+                  <td>
+                    <!-- miscellaneous -->
+                    <a href="./miscellaneous/variables.html#User"
+                      >src/decorators/user.decorator.ts</a
+                    >
+                  </td>
+                  <td>variable</td>
+                  <td>User</td>
+                  <td align="right" data-sort="0">
+                    <span class="coverage-percent">0 %</span>
+                    <span class="coverage-count">(0/1)</span>
+                  </td>
+                </tr>
+                <tr class="low">
+                  <td>
+                    <!-- miscellaneous -->
+                    <a href="./injectables/GrpcService.html"
+                      >src/grpc/grpc.service.ts</a
+                    >
+                  </td>
+                  <td>injectable</td>
+                  <td>GrpcService</td>
+                  <td align="right" data-sort="0">
+                    <span class="coverage-percent">0 %</span>
+                    <span class="coverage-count">(0/6)</span>
+                  </td>
+                </tr>
+                <tr class="low">
+                  <td>
+                    <!-- miscellaneous -->
+                    <a href="./interfaces/InterfaceResponse.html"
+                      >src/grpc/grpc.service.ts</a
+                    >
+                  </td>
+                  <td>interface</td>
+                  <td>InterfaceResponse</td>
+                  <td align="right" data-sort="0">
+                    <span class="coverage-percent">0 %</span>
+                    <span class="coverage-count">(0/4)</span>
+                  </td>
+                </tr>
+                <tr class="low">
+                  <td>
+                    <!-- miscellaneous -->
+                    <a href="./interfaces/InterfaceService.html"
+                      >src/grpc/grpc.service.ts</a
+                    >
+                  </td>
+                  <td>interface</td>
+                  <td>InterfaceService</td>
+                  <td align="right" data-sort="0">
+                    <span class="coverage-percent">0 %</span>
+                    <span class="coverage-count">(0/2)</span>
+                  </td>
+                </tr>
+                <tr class="low">
+                  <td>
+                    <!-- miscellaneous -->
+                    <a href="./guards/AuthGuard.html"
+                      >src/guards/auth.guard.ts</a
+                    >
+                  </td>
+                  <td>guard</td>
+                  <td>AuthGuard</td>
+                  <td align="right" data-sort="0">
+                    <span class="coverage-percent">0 %</span>
+                    <span class="coverage-count">(0/4)</span>
+                  </td>
+                </tr>
+                <tr class="low">
+                  <td>
+                    <!-- miscellaneous -->
+                    <a href="./guards/RolesGuard.html"
+                      >src/guards/permissions.guard.ts</a
+                    >
+                  </td>
+                  <td>guard</td>
+                  <td>RolesGuard</td>
+                  <td align="right" data-sort="0">
+                    <span class="coverage-percent">0 %</span>
+                    <span class="coverage-count">(0/4)</span>
+                  </td>
+                </tr>
+                <tr class="low">
+                  <td>
+                    <!-- miscellaneous -->
+                    <a href="./miscellaneous/functions.html#bootstrap"
+                      >src/main.ts</a
+                    >
+                  </td>
+                  <td>function</td>
+                  <td>bootstrap</td>
+                  <td align="right" data-sort="0">
+                    <span class="coverage-percent">0 %</span>
+                    <span class="coverage-count">(0/1)</span>
+                  </td>
+                </tr>
+                <tr class="low">
+                  <td>
+                    <!-- miscellaneous -->
+                    <a href="./interfaces/ISearchQueryRequestPayload.html"
+                      >src/open-search/dto/open-search-query.dto.ts</a
+                    >
+                  </td>
+                  <td>interface</td>
+                  <td>ISearchQueryRequestPayload</td>
+                  <td align="right" data-sort="0">
+                    <span class="coverage-percent">0 %</span>
+                    <span class="coverage-count">(0/5)</span>
+                  </td>
+                </tr>
+                <tr class="low">
+                  <td>
+                    <!-- miscellaneous -->
+                    <a href="./controllers/OpenSearchController.html"
+                      >src/open-search/open-search.controller.ts</a
+                    >
+                  </td>
+                  <td>controller</td>
+                  <td>OpenSearchController</td>
+                  <td align="right" data-sort="0">
+                    <span class="coverage-percent">0 %</span>
+                    <span class="coverage-count">(0/6)</span>
+                  </td>
+                </tr>
+                <tr class="low">
+                  <td>
+                    <!-- miscellaneous -->
+                    <a href="./injectables/OpenSearchService.html"
+                      >src/open-search/open-search.service.ts</a
+                    >
+                  </td>
+                  <td>injectable</td>
+                  <td>OpenSearchService</td>
+                  <td align="right" data-sort="25">
+                    <span class="coverage-percent">25 %</span>
+                    <span class="coverage-count">(4/16)</span>
+                  </td>
+                </tr>
+                <tr class="low">
+                  <td>
+                    <!-- miscellaneous -->
+                    <a href="./interfaces/MappingInput.html"
+                      >src/open-search/open-search.service.ts</a
+                    >
+                  </td>
+                  <td>interface</td>
+                  <td>MappingInput</td>
+                  <td align="right" data-sort="0">
+                    <span class="coverage-percent">0 %</span>
+                    <span class="coverage-count">(0/2)</span>
+                  </td>
+                </tr>
+                <tr class="low">
+                  <td>
+                    <!-- miscellaneous -->
+                    <a href="./interfaces/Output.html"
+                      >src/open-search/open-search.service.ts</a
+                    >
+                  </td>
+                  <td>interface</td>
+                  <td>Output</td>
+                  <td align="right" data-sort="0">
+                    <span class="coverage-percent">0 %</span>
+                    <span class="coverage-count">(0/4)</span>
+                  </td>
+                </tr>
+                <tr class="low">
+                  <td>
+                    <!-- miscellaneous -->
+                    <a href="./interfaces/ProcessNode.html"
+                      >src/open-search/open-search.service.ts</a
+                    >
+                  </td>
+                  <td>interface</td>
+                  <td>ProcessNode</td>
+                  <td align="right" data-sort="0">
+                    <span class="coverage-percent">0 %</span>
+                    <span class="coverage-count">(0/9)</span>
+                  </td>
+                </tr>
+                <tr class="low">
+                  <td>
+                    <!-- miscellaneous -->
+                    <a href="./miscellaneous/typealiases.html#MappingProperties"
+                      >src/open-search/open-search.service.ts</a
+                    >
+                  </td>
+                  <td>type alias</td>
+                  <td>MappingProperties</td>
+                  <td align="right" data-sort="0">
+                    <span class="coverage-percent">0 %</span>
+                    <span class="coverage-count">(0/1)</span>
+                  </td>
+                </tr>
+                <tr class="low">
+                  <td>
+                    <!-- miscellaneous -->
+                    <a href="./injectables/OpenSearchClientProvider.html"
+                      >src/open-search/opensearch-client.provider.ts</a
+                    >
+                  </td>
+                  <td>injectable</td>
+                  <td>OpenSearchClientProvider</td>
+                  <td align="right" data-sort="14">
+                    <span class="coverage-percent">14 %</span>
+                    <span class="coverage-count">(1/7)</span>
+                  </td>
+                </tr>
+                <tr class="low">
+                  <td>
+                    <!-- miscellaneous -->
+                    <a href="./interfaces/ICreateRoleRequest.html"
+                      >src/role/dto/role.dto.ts</a
+                    >
+                  </td>
+                  <td>interface</td>
+                  <td>ICreateRoleRequest</td>
+                  <td align="right" data-sort="0">
+                    <span class="coverage-percent">0 %</span>
+                    <span class="coverage-count">(0/1)</span>
+                  </td>
+                </tr>
+                <tr class="low">
+                  <td>
+                    <!-- miscellaneous -->
+                    <a href="./interfaces/IGetRole.html"
+                      >src/role/dto/role.dto.ts</a
+                    >
+                  </td>
+                  <td>interface</td>
+                  <td>IGetRole</td>
+                  <td align="right" data-sort="0">
+                    <span class="coverage-percent">0 %</span>
+                    <span class="coverage-count">(0/1)</span>
+                  </td>
+                </tr>
+                <tr class="low">
+                  <td>
+                    <!-- miscellaneous -->
+                    <a href="./interfaces/IGetRoleRequest.html"
+                      >src/role/dto/role.dto.ts</a
+                    >
+                  </td>
+                  <td>interface</td>
+                  <td>IGetRoleRequest</td>
+                  <td align="right" data-sort="0">
+                    <span class="coverage-percent">0 %</span>
+                    <span class="coverage-count">(0/2)</span>
+                  </td>
+                </tr>
+                <tr class="low">
+                  <td>
+                    <!-- miscellaneous -->
+                    <a href="./interfaces/IUpdateRoleRequest.html"
+                      >src/role/dto/role.dto.ts</a
+                    >
+                  </td>
+                  <td>interface</td>
+                  <td>IUpdateRoleRequest</td>
+                  <td align="right" data-sort="0">
+                    <span class="coverage-percent">0 %</span>
+                    <span class="coverage-count">(0/2)</span>
+                  </td>
+                </tr>
+                <tr class="low">
+                  <td>
+                    <!-- miscellaneous -->
+                    <a href="./controllers/RoleController.html"
+                      >src/role/role.controller.ts</a
+                    >
+                  </td>
+                  <td>controller</td>
+                  <td>RoleController</td>
+                  <td align="right" data-sort="0">
+                    <span class="coverage-percent">0 %</span>
+                    <span class="coverage-count">(0/4)</span>
+                  </td>
+                </tr>
+                <tr class="low">
+                  <td>
+                    <!-- miscellaneous -->
+                    <a href="./injectables/RoleService.html"
+                      >src/role/role.service.ts</a
+                    >
+                  </td>
+                  <td>injectable</td>
+                  <td>RoleService</td>
+                  <td align="right" data-sort="0">
+                    <span class="coverage-percent">0 %</span>
+                    <span class="coverage-count">(0/7)</span>
+                  </td>
+                </tr>
+                <tr class="low">
+                  <td>
+                    <!-- miscellaneous -->
+                    <a href="./interfaces/ICreateUserVariableRequest.html"
+                      >src/user-variable/dto/user-variable.dto.ts</a
+                    >
+                  </td>
+                  <td>interface</td>
+                  <td>ICreateUserVariableRequest</td>
+                  <td align="right" data-sort="0">
+                    <span class="coverage-percent">0 %</span>
+                    <span class="coverage-count">(0/3)</span>
+                  </td>
+                </tr>
+                <tr class="low">
+                  <td>
+                    <!-- miscellaneous -->
+                    <a href="./interfaces/IGetUserVariable.html"
+                      >src/user-variable/dto/user-variable.dto.ts</a
+                    >
+                  </td>
+                  <td>interface</td>
+                  <td>IGetUserVariable</td>
+                  <td align="right" data-sort="0">
+                    <span class="coverage-percent">0 %</span>
+                    <span class="coverage-count">(0/1)</span>
+                  </td>
+                </tr>
+                <tr class="low">
+                  <td>
+                    <!-- miscellaneous -->
+                    <a href="./interfaces/IGetUserVariableRequest.html"
+                      >src/user-variable/dto/user-variable.dto.ts</a
+                    >
+                  </td>
+                  <td>interface</td>
+                  <td>IGetUserVariableRequest</td>
+                  <td align="right" data-sort="0">
+                    <span class="coverage-percent">0 %</span>
+                    <span class="coverage-count">(0/2)</span>
+                  </td>
+                </tr>
+                <tr class="low">
+                  <td>
+                    <!-- miscellaneous -->
+                    <a href="./interfaces/IUpdateUserVariableRequest.html"
+                      >src/user-variable/dto/user-variable.dto.ts</a
+                    >
+                  </td>
+                  <td>interface</td>
+                  <td>IUpdateUserVariableRequest</td>
+                  <td align="right" data-sort="0">
+                    <span class="coverage-percent">0 %</span>
+                    <span class="coverage-count">(0/3)</span>
+                  </td>
+                </tr>
+                <tr class="low">
+                  <td>
+                    <!-- miscellaneous -->
+                    <a href="./controllers/UserVariableController.html"
+                      >src/user-variable/user-variable.controller.ts</a
+                    >
+                  </td>
+                  <td>controller</td>
+                  <td>UserVariableController</td>
+                  <td align="right" data-sort="0">
+                    <span class="coverage-percent">0 %</span>
+                    <span class="coverage-count">(0/6)</span>
+                  </td>
+                </tr>
+                <tr class="low">
+                  <td>
+                    <!-- miscellaneous -->
+                    <a href="./injectables/UserVariableService.html"
+                      >src/user-variable/user-variable.service.ts</a
+                    >
+                  </td>
+                  <td>injectable</td>
+                  <td>UserVariableService</td>
+                  <td align="right" data-sort="0">
+                    <span class="coverage-percent">0 %</span>
+                    <span class="coverage-count">(0/10)</span>
+                  </td>
+                </tr>
+                <tr class="low">
+                  <td>
+                    <!-- miscellaneous -->
+                    <a href="./interfaces/IAggs.html"
+                      >src/widget/dto/widget.dto.ts</a
+                    >
+                  </td>
+                  <td>interface</td>
+                  <td>IAggs</td>
+                  <td align="right" data-sort="0">
+                    <span class="coverage-percent">0 %</span>
+                    <span class="coverage-count">(0/1)</span>
+                  </td>
+                </tr>
+                <tr class="low">
+                  <td>
+                    <!-- miscellaneous -->
+                    <a href="./interfaces/ICreateWidgetRequest.html"
+                      >src/widget/dto/widget.dto.ts</a
+                    >
+                  </td>
+                  <td>interface</td>
+                  <td>ICreateWidgetRequest</td>
+                  <td align="right" data-sort="0">
+                    <span class="coverage-percent">0 %</span>
+                    <span class="coverage-count">(0/2)</span>
+                  </td>
+                </tr>
+                <tr class="low">
+                  <td>
+                    <!-- miscellaneous -->
+                    <a href="./interfaces/IGetQueryDataFilter.html"
+                      >src/widget/dto/widget.dto.ts</a
+                    >
+                  </td>
+                  <td>interface</td>
+                  <td>IGetQueryDataFilter</td>
+                  <td align="right" data-sort="0">
+                    <span class="coverage-percent">0 %</span>
+                    <span class="coverage-count">(0/7)</span>
+                  </td>
+                </tr>
+                <tr class="low">
+                  <td>
+                    <!-- miscellaneous -->
+                    <a href="./interfaces/IGetQueryDataRequest.html"
+                      >src/widget/dto/widget.dto.ts</a
+                    >
+                  </td>
+                  <td>interface</td>
+                  <td>IGetQueryDataRequest</td>
+                  <td align="right" data-sort="0">
+                    <span class="coverage-percent">0 %</span>
+                    <span class="coverage-count">(0/3)</span>
+                  </td>
+                </tr>
+                <tr class="low">
+                  <td>
+                    <!-- miscellaneous -->
+                    <a href="./interfaces/IGetWidget.html"
+                      >src/widget/dto/widget.dto.ts</a
+                    >
+                  </td>
+                  <td>interface</td>
+                  <td>IGetWidget</td>
+                  <td align="right" data-sort="0">
+                    <span class="coverage-percent">0 %</span>
+                    <span class="coverage-count">(0/1)</span>
+                  </td>
+                </tr>
+                <tr class="low">
+                  <td>
+                    <!-- miscellaneous -->
+                    <a href="./interfaces/IGetWidgetRequest.html"
+                      >src/widget/dto/widget.dto.ts</a
+                    >
+                  </td>
+                  <td>interface</td>
+                  <td>IGetWidgetRequest</td>
+                  <td align="right" data-sort="0">
+                    <span class="coverage-percent">0 %</span>
+                    <span class="coverage-count">(0/2)</span>
+                  </td>
+                </tr>
+                <tr class="low">
+                  <td>
+                    <!-- miscellaneous -->
+                    <a href="./interfaces/IUpdateWidgetRequest.html"
+                      >src/widget/dto/widget.dto.ts</a
+                    >
+                  </td>
+                  <td>interface</td>
+                  <td>IUpdateWidgetRequest</td>
+                  <td align="right" data-sort="0">
+                    <span class="coverage-percent">0 %</span>
+                    <span class="coverage-count">(0/2)</span>
+                  </td>
+                </tr>
+                <tr class="low">
+                  <td>
+                    <!-- miscellaneous -->
+                    <a href="./controllers/WidgetController.html"
+                      >src/widget/widget.controller.ts</a
+                    >
+                  </td>
+                  <td>controller</td>
+                  <td>WidgetController</td>
+                  <td align="right" data-sort="0">
+                    <span class="coverage-percent">0 %</span>
+                    <span class="coverage-count">(0/6)</span>
+                  </td>
+                </tr>
+                <tr class="low">
+                  <td>
+                    <!-- miscellaneous -->
+                    <a href="./injectables/WidgetService.html"
+                      >src/widget/widget.service.ts</a
+                    >
+                  </td>
+                  <td>injectable</td>
+                  <td>WidgetService</td>
+                  <td align="right" data-sort="0">
+                    <span class="coverage-percent">0 %</span>
+                    <span class="coverage-count">(0/10)</span>
+                  </td>
+                </tr>
+                <tr class="low">
+                  <td>
+                    <!-- miscellaneous -->
+                    <a href="./interfaces/Aggregation.html"
+                      >src/widget/widget.service.ts</a
+                    >
+                  </td>
+                  <td>interface</td>
+                  <td>Aggregation</td>
+                  <td align="right" data-sort="0">
+                    <span class="coverage-percent">0 %</span>
+                    <span class="coverage-count">(0/1)</span>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+
+            <script src="js/libs/tablesort.min.js"></script>
+            <script src="js/libs/tablesort.number.min.js"></script>
+            <script>
+              new Tablesort(document.getElementById('coverage-table'));
+            </script>
+          </div>
+          <div class="search-results">
+            <div class="has-results">
+              <h1 class="search-results-title">
+                <span class="search-results-count"></span> results matching
+                "<span class="search-query"></span>"
+              </h1>
+              <ul class="search-results-list"></ul>
+            </div>
+            <div class="no-results">
+              <h1 class="search-results-title">
+                No results matching "<span class="search-query"></span>"
+              </h1>
+            </div>
+          </div>
+        </div>
+        <!-- END CONTENT -->
+      </div>
+    </div>
+
+    <label class="dark-mode-switch">
+      <input type="checkbox" />
+      <span class="slider">
+        <svg
+          class="slider-icon"
+          viewBox="0 0 24 24"
+          fill="none"
+          height="20"
+          stroke="#000"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="2"
+          width="20"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"></path>
+        </svg>
+      </span>
+    </label>
+
+    <script>
+      var COMPODOC_CURRENT_PAGE_DEPTH = 0;
+      var COMPODOC_CURRENT_PAGE_CONTEXT = 'coverage';
+      var COMPODOC_CURRENT_PAGE_URL = 'coverage.html';
+      var MAX_SEARCH_RESULTS = 15;
+    </script>
+
+    <script>
+      $darkModeToggleSwitchers = document.querySelectorAll(
+        '.dark-mode-switch input',
+      );
+      checkToggle(darkModeState);
+      if ($darkModeToggleSwitchers.length > 0) {
+        for (var i = 0; i < $darkModeToggleSwitchers.length; i++) {
+          $darkModeToggleSwitchers[i].addEventListener(
+            'change',
+            function (event) {
+              darkModeState = !darkModeState;
+              toggleDarkMode(darkModeState);
+            },
+          );
+        }
+      }
+    </script>
+
+    <script src="./js/libs/custom-elements.min.js"></script>
+    <script src="./js/libs/lit-html.js"></script>
+
+    <script src="./js/menu-wc.js" defer></script>
+    <script nomodule src="./js/menu-wc_es5.js" defer></script>
+
+    <script src="./js/libs/bootstrap-native.js"></script>
+
+    <script src="./js/libs/es6-shim.min.js"></script>
+    <script src="./js/libs/EventDispatcher.js"></script>
+    <script src="./js/libs/promise.min.js"></script>
+
+    <script src="./js/compodoc.js"></script>
+
+    <script src="./js/tabs.js"></script>
+    <script src="./js/menu.js"></script>
+    <script src="./js/libs/clipboard.min.js"></script>
+    <script src="./js/libs/prism.js"></script>
+    <script src="./js/sourceCode.js"></script>
+    <script src="./js/search/search.js"></script>
+    <script src="./js/search/lunr.min.js"></script>
+    <script src="./js/search/search-lunr.js"></script>
+    <script src="./js/search/search_index.js"></script>
+    <script src="./js/lazy-load-graphs.js"></script>
+  </body>
+</html>

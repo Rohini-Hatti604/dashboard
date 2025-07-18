@@ -1,0 +1,1462 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>@clean-start-dashboard/api documentation</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+	   <link rel="stylesheet" href="../styles/style.css">
+        <link rel="stylesheet" href="../styles/dark.css">
+    </head>
+    <body>
+          <script>
+               // Blocking script to avoid flickering dark mode
+               // Dark mode toggle button
+               var useDark = window.matchMedia('(prefers-color-scheme: dark)');
+               var darkModeState = useDark.matches;
+               var $darkModeToggleSwitchers = document.querySelectorAll('.dark-mode-switch input');
+               var $darkModeToggles = document.querySelectorAll('.dark-mode-switch');
+               var darkModeStateLocal = localStorage.getItem('compodoc_darkmode-state');
+
+               function checkToggle(check) {
+                    for (var i = 0; i < $darkModeToggleSwitchers.length; i++) {
+                         $darkModeToggleSwitchers[i].checked = check;
+                    }
+               }
+
+               function toggleDarkMode(state) {
+                    if (window.localStorage) {
+                         localStorage.setItem('compodoc_darkmode-state', state);
+                    }
+
+                    checkToggle(state);
+
+                    const hasClass = document.body.classList.contains('dark');
+
+                    if (state) {
+                         for (var i = 0; i < $darkModeToggles.length; i++) {
+                              $darkModeToggles[i].classList.add('dark');
+                         }
+                         if (!hasClass) {
+                              document.body.classList.add('dark');
+                         }
+                    } else {
+                         for (var i = 0; i < $darkModeToggles.length; i++) {
+                              $darkModeToggles[i].classList.remove('dark');
+                         }
+                         if (hasClass) {
+                              document.body.classList.remove('dark');
+                         }
+                    }
+               }
+
+               useDark.addEventListener('change', function (evt) {
+                    toggleDarkMode(evt.matches);
+               });
+               if (darkModeStateLocal) {
+                    darkModeState = darkModeStateLocal === 'true';
+               }
+               toggleDarkMode(darkModeState);
+          </script>
+
+        <div class="navbar navbar-default navbar-fixed-top d-md-none p-0">
+               <div class="d-flex">
+                    <a href="../" class="navbar-brand">@clean-start-dashboard/api documentation</a>
+                    <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+               </div>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+                <div id="book-search-input" role="search"><input type="text" placeholder="Type to search"></div>            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="d-none d-md-block menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content injectable">
+                   <div class="content-data">
+
+
+
+
+
+
+
+
+<ol class="breadcrumb">
+  <li class="breadcrumb-item">Injectables</li>
+  <li class="breadcrumb-item" >WidgetService</li>
+</ol>
+
+<ul class="nav nav-tabs" role="tablist">
+        <li class="nav-item">
+            <a href="#info" 
+                class="nav-link"
+                class="nav-link active"
+                role="tab" id="info-tab" data-bs-toggle="tab" data-link="info">Info</a>
+        </li>
+        <li class="nav-item">
+            <a href="#source" 
+                class="nav-link"
+                
+                role="tab" id="source-tab" data-bs-toggle="tab" data-link="source">Source</a>
+        </li>
+</ul>
+
+<div class="tab-content">
+    <div class="tab-pane fade active in" id="info">
+        <p class="comment">
+            <h3>File</h3>
+        </p>
+        <p class="comment">
+            <code>src/widget/widget.service.ts</code>
+        </p>
+
+
+
+
+
+            <section data-compodoc="block-index">
+    <h3 id="index">Index</h3>
+    <table class="table table-sm table-bordered index-table">
+        <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Properties</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                    <span class="modifier">Private</span>
+                                    <span class="modifier">Readonly</span>
+                                <a href="#logger" >logger</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Methods</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                    <span class="modifier">Public</span>
+                                    <span class="modifier">Async</span>
+                                <a href="#aggregate" >aggregate</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Private</span>
+                                <a href="#convertToNestedAggs" >convertToNestedAggs</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                    <span class="modifier">Async</span>
+                                <a href="#create" >create</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                    <span class="modifier">Async</span>
+                                <a href="#getById" >getById</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                    <span class="modifier">Async</span>
+                                <a href="#list" >list</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                    <span class="modifier">Async</span>
+                                <a href="#update" >update</a>
+                            </li>
+                            <li>
+                                <a href="#updateDateHistogram" >updateDateHistogram</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+            <section data-compodoc="block-constructor">
+    <h3 id="constructor">Constructor</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+<code>constructor(prismaService: PrismaService, searchService: <a href="../injectables/OpenSearchService.html" target="_self">OpenSearchService</a>, configService: ConfigService)</code>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="40" class="link-to-prism">src/widget/widget.service.ts:40</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                            <div>
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                    <td>Type</td>
+                                                <td>Optional</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>prismaService</td>
+                                                  
+                                                        <td>
+                                                                    <code>PrismaService</code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>searchService</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/OpenSearchService.html" target="_self" >OpenSearchService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>configService</td>
+                                                  
+                                                        <td>
+                                                                    <code>ConfigService</code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+</section>
+
+            <section data-compodoc="block-methods">
+    
+    <h3 id="methods">
+        Methods
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="aggregate"></a>
+                    <span class="name">
+                            <span class="modifier">Public</span>
+                            <span class="modifier">Async</span>
+                        <span ><b>aggregate</b></span>
+                        <a href="#aggregate"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>aggregate(query: <a href="../interfaces/IGetQueryDataRequest.html" target="_self">IGetQueryDataRequest</a>)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="122"
+                                    class="link-to-prism">src/widget/widget.service.ts:122</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>query</td>
+                                            <td>
+                                                            <code><a href="../interfaces/IGetQueryDataRequest.html" target="_self" >IGetQueryDataRequest</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>    <code>unknown</code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="convertToNestedAggs"></a>
+                    <span class="name">
+                            <span class="modifier">Private</span>
+                        <span ><b>convertToNestedAggs</b></span>
+                        <a href="#convertToNestedAggs"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>convertToNestedAggs(input: IWidgetConfig, timeBounds: literal type, sort: literal type)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="157"
+                                    class="link-to-prism">src/widget/widget.service.ts:157</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>input</td>
+                                            <td>
+                                                        <code>IWidgetConfig</code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                        <tr>
+                                                <td>timeBounds</td>
+                                            <td>
+                                                        <code>literal type</code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                        <tr>
+                                                <td>sort</td>
+                                            <td>
+                                                        <code>literal type</code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="create"></a>
+                    <span class="name">
+                            <span class="modifier">Public</span>
+                            <span class="modifier">Async</span>
+                        <span ><b>create</b></span>
+                        <a href="#create"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>create(inputs: Prisma.WidgetUncheckedCreateInput)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="47"
+                                    class="link-to-prism">src/widget/widget.service.ts:47</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>inputs</td>
+                                            <td>
+                                                        <code>Prisma.WidgetUncheckedCreateInput</code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>    <code>unknown</code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getById"></a>
+                    <span class="name">
+                            <span class="modifier">Public</span>
+                            <span class="modifier">Async</span>
+                        <span ><b>getById</b></span>
+                        <a href="#getById"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>getById(id: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="108"
+                                    class="link-to-prism">src/widget/widget.service.ts:108</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>id</td>
+                                            <td>
+                                                            <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>    <code>unknown</code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="list"></a>
+                    <span class="name">
+                            <span class="modifier">Public</span>
+                            <span class="modifier">Async</span>
+                        <span ><b>list</b></span>
+                        <a href="#list"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>list(query?: <a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank">any</a>)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="86"
+                                    class="link-to-prism">src/widget/widget.service.ts:86</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>query</td>
+                                            <td>
+                                                            <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+                                            </td>
+
+                                            <td>
+                                                    Yes
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>    <code>unknown</code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="update"></a>
+                    <span class="name">
+                            <span class="modifier">Public</span>
+                            <span class="modifier">Async</span>
+                        <span ><b>update</b></span>
+                        <a href="#update"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>update(inputs: Prisma.WidgetUncheckedUpdateInput, id: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="66"
+                                    class="link-to-prism">src/widget/widget.service.ts:66</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>inputs</td>
+                                            <td>
+                                                        <code>Prisma.WidgetUncheckedUpdateInput</code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                        <tr>
+                                                <td>id</td>
+                                            <td>
+                                                            <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>    <code>unknown</code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="updateDateHistogram"></a>
+                    <span class="name">
+                        <span ><b>updateDateHistogram</b></span>
+                        <a href="#updateDateHistogram"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>updateDateHistogram(aggregation: <a href="../interfaces/Aggregation.html" target="_self">Aggregation</a>, newMin: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank">number</a>, newMax: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank">number</a>, timezone: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="478"
+                                    class="link-to-prism">src/widget/widget.service.ts:478</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>aggregation</td>
+                                            <td>
+                                                            <code><a href="../interfaces/Aggregation.html" target="_self" >Aggregation</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                        <tr>
+                                                <td>newMin</td>
+                                            <td>
+                                                            <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                        <tr>
+                                                <td>newMax</td>
+                                            <td>
+                                                            <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                        <tr>
+                                                <td>timezone</td>
+                                            <td>
+                                                            <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>
+            <section data-compodoc="block-properties">
+    
+    <h3 id="inputs">
+        Properties
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="logger"></a>
+                    <span class="name">
+                            <span class="modifier">Private</span>
+                            <span class="modifier">Readonly</span>
+                        <span ><b>logger</b></span>
+                        <a href="#logger"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>new Logger(WidgetService.name)</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="40" class="link-to-prism">src/widget/widget.service.ts:40</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+</section>
+
+    </div>
+
+
+    <div class="tab-pane fade  tab-source-code" id="source">
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Prisma, PrismaService } from &#x27;@clean-start-dashboard/database&#x27;;
+import { IWidgetConfig } from &#x27;@clean-start-dashboard/shared&#x27;;
+import { Injectable, Logger } from &#x27;@nestjs/common&#x27;;
+import { ConfigService } from &#x27;@nestjs/config&#x27;;
+import dayjs from &#x27;dayjs&#x27;;
+import timezone from &#x27;dayjs/plugin/timezone&#x27;;
+import utc from &#x27;dayjs/plugin/utc&#x27;;
+import { nullToUndefined } from &#x27;src/common/utils&#x27;;
+import { OpenSearchService } from &#x27;src/open-search/open-search.service&#x27;;
+import { IAggs, IGetQueryDataRequest } from &#x27;./dto/widget.dto&#x27;;
+
+
+dayjs.extend(utc)
+dayjs.extend(timezone)
+
+// eslint-disable-next-line @typescript-eslint/no-empty-object-type
+
+interface Aggregation {
+  [key: string]: {
+    terms?: {
+      field: string;
+      size: number;
+      order: { [key: string]: string };
+      min_doc_count: number;
+    };
+    date_histogram?: {
+      time_zone: string;
+      interval: string;
+      field: string;
+      min_doc_count: number;
+      extended_bounds: { min: number; max: number };
+      format: string;
+    };
+    aggs?: Aggregation;
+  };
+}
+
+@Injectable()
+export class WidgetService {
+  private readonly logger &#x3D; new Logger(WidgetService.name);
+  constructor(
+    private readonly prismaService: PrismaService,
+    private readonly searchService: OpenSearchService,
+    private readonly configService: ConfigService,
+  ) { }
+
+  public async create(inputs: Prisma.WidgetUncheckedCreateInput) {
+    const { widgetCategoryId, ...rest } &#x3D; inputs;
+    this.logger.verbose(&#x60;--&gt; widget creation started&#x60;);
+    const widget &#x3D; await this.prismaService.widget.create({
+      data: {
+        ...rest,
+        ...(typeof widgetCategoryId &#x3D;&#x3D;&#x3D; &#x27;string&#x27;
+          ? {
+            widgetCategory: {
+              connect: { id: widgetCategoryId },
+            },
+          }
+          : {}),
+      },
+    });
+    this.logger.verbose(&#x60;--&gt; widget created&#x60;);
+    return widget;
+  }
+
+  public async update(inputs: Prisma.WidgetUncheckedUpdateInput, id: string) {
+    this.logger.verbose(&#x60;--&gt; widget updating started&#x60;);
+    const { widgetCategoryId, ...rest } &#x3D; inputs;
+    const widget &#x3D; await this.prismaService.widget.update({
+      data: {
+        ...rest,
+        ...(typeof widgetCategoryId &#x3D;&#x3D;&#x3D; &#x27;string&#x27;
+          ? {
+            widgetCategory: {
+              connect: { id: widgetCategoryId },
+            },
+          }
+          : {}),
+      },
+      where: { id },
+    });
+    this.logger.verbose(&#x60;--&gt; widget updated&#x60;);
+    return widget;
+  }
+
+  public async list(query?: any) {
+    this.logger.verbose(&#x60;--&gt; widget list started&#x60;);
+    const total &#x3D; await this.prismaService.widget.count({
+      where: query.where,
+    });
+    const widgets &#x3D; await this.prismaService.widget.findMany({
+      ...query,
+      where: {
+        ...query.where,
+      },
+      include: {
+        widgetCategory: true,
+      },
+    });
+    this.logger.verbose(&#x60;--&gt; widget fetched&#x60;);
+    // return widgets;
+    return {
+      total: total,
+      items: widgets.map((widget) &#x3D;&gt; nullToUndefined(widget)),
+    };
+  }
+
+  public async getById(id: string) {
+    this.logger.verbose(&#x60;--&gt; widget by id started&#x60;);
+    const widget &#x3D; await this.prismaService.widget.findUnique({
+      where: {
+        id,
+      },
+      include: {
+        widgetCategory: true,
+      },
+    });
+    this.logger.verbose(&#x60;--&gt; widget fetched&#x60;);
+    return widget;
+  }
+
+  public async aggregate(query: IGetQueryDataRequest) {
+    this.logger.verbose(&#x60;--&gt; widget get query data started&#x60;);
+    // console.log(query);
+
+    const timeBounds &#x3D; {
+      min: new Date(query.filters.timeBounds.min).getTime(),
+      max: new Date(query.filters.timeBounds.max).getTime(),
+      timezone: dayjs(query.filters.timeBounds.min).tz(query.filters.timeBounds.timezone ?? &quot;Asia/Calcutta&quot;).format(&#x27;Z&#x27;),
+    };
+
+    console.log(&quot;timezone&quot;, timeBounds.timezone, &quot;min&quot;, timeBounds.min, &quot;max&quot;, timeBounds.max);
+
+
+    const aggregations &#x3D; await Promise.all(
+      query.config.map((config) &#x3D;&gt;
+        this.convertToNestedAggs(config, timeBounds, query?.filters?.sort),
+      ),
+    );
+
+    const params: any &#x3D; [];
+    (await aggregations).map((aggregation) &#x3D;&gt; {
+      params.push({
+        index: this.configService.get(&#x27;OPENSEARCH_LOG_INDEX&#x27;) ?? &#x27;esdl-archives*&#x27;,
+      });
+      params.push({ ...aggregation });
+    });
+
+    const data &#x3D; this.searchService.aggregateQuery(params);
+    this.logger.verbose(&#x60;--&gt; widget fetched&#x60;);
+    // return params;
+    return data;
+  }
+
+  //Private functions
+
+  private convertToNestedAggs(
+    input: IWidgetConfig,
+    timeBounds: {
+      timezone?: string; min: number; max: number
+    },
+    sort: { &#x27;@timestamp&#x27;: { order: &#x27;asc&#x27;; unmapped_type: &#x27;boolean&#x27; } },
+  ): any {
+    let aggs: IAggs &#x3D; {};
+
+    if (input.aggregation) {
+      aggs &#x3D; this.updateDateHistogram(
+        input.aggregation,
+        timeBounds.min,
+        timeBounds.max,
+        timeBounds.timezone ?? &quot;+05:30&quot;,
+      );
+    } else {
+      input.bucketAggs.reduce((acc, item) &#x3D;&gt; {
+        const { field, settings, type } &#x3D; item;
+        const {
+          min_doc_count,
+          order,
+          orderBy,
+          size,
+          interval,
+          filters,
+          precision,
+        } &#x3D; settings;
+
+        const createTermsAgg &#x3D; () &#x3D;&gt; ({
+          terms: {
+            field: field!,
+            size: parseInt(size || &#x27;1&#x27;, 10),
+            order: { [orderBy &#x3D;&#x3D;&#x3D; &#x27;_count&#x27; ? &#x27;_count&#x27; : &#x27;_key&#x27;]: order! },
+            min_doc_count: parseInt(min_doc_count || &#x27;0&#x27;, 10),
+          },
+          aggs: {},
+        });
+
+        const createDateHistogramAgg &#x3D; () &#x3D;&gt; ({
+          date_histogram: {
+            interval: interval || &#x27;1d&#x27;,
+            field: field!,
+            min_doc_count: parseInt(min_doc_count || &#x27;0&#x27;, 10),
+            timezone: timeBounds.timezone,
+            extended_bounds: {
+              min: timeBounds.min,
+              max: timeBounds.max,
+            },
+            format: &#x27;epoch_millis&#x27;,
+          },
+          aggs: {},
+        });
+
+        const createFiltersAgg &#x3D; () &#x3D;&gt; ({
+          filters: {
+            filters: filters!.reduce(
+              (acc, filter) &#x3D;&gt; {
+                acc[filter.label] &#x3D; {
+                  query_string: { query: filter.query, analyze_wildcard: true },
+                };
+                return acc;
+              },
+              {} as {
+                [key: string]: {
+                  query_string: { query: string; analyze_wildcard: boolean };
+                };
+              },
+            ),
+          },
+          aggs: {},
+        });
+
+        const createGeohashGridAgg &#x3D; () &#x3D;&gt; ({
+          geohash_grid: {
+            field: field!,
+            precision: parseInt(precision || &#x27;0&#x27;, 10),
+          },
+          aggs: {},
+        });
+
+        const createHistogramAgg &#x3D; () &#x3D;&gt; ({
+          histogram: {
+            field: field!,
+            interval: parseInt(interval || &#x27;0&#x27;, 10),
+            min_doc_count: parseInt(min_doc_count || &#x27;0&#x27;, 10),
+          },
+          aggs: {},
+        });
+
+        const createAgg &#x3D; () &#x3D;&gt; {
+          switch (type) {
+            case &#x27;terms&#x27;:
+              return createTermsAgg();
+            case &#x27;date_histogram&#x27;:
+              return createDateHistogramAgg();
+            case &#x27;filters&#x27;:
+              return createFiltersAgg();
+            case &#x27;geohash_grid&#x27;:
+              return createGeohashGridAgg();
+            case &#x27;histogram&#x27;:
+              return createHistogramAgg();
+            default:
+              return { aggs: {} };
+          }
+        };
+
+        const agg &#x3D; createAgg();
+        acc[item.id] &#x3D; agg;
+
+        return agg.aggs;
+      }, aggs);
+    }
+
+    // input.bucketAggs.forEach((agg, index) &#x3D;&gt; {
+    //   const { id, field, settings, type } &#x3D; agg;
+    //   const {
+    //     min_doc_count,
+    //     order,
+    //     orderBy,
+    //     size,
+    //     interval,
+    //     filters,
+    //     precision,
+    //   } &#x3D; settings;
+
+    //   const createTermsAgg &#x3D; () &#x3D;&gt; ({
+    //     terms: {
+    //       field: field!,
+    //       size: parseInt(size || &#x27;1&#x27;, 10),
+    //       order: { [orderBy &#x3D;&#x3D;&#x3D; &#x27;_count&#x27; ? &#x27;_count&#x27; : &#x27;_key&#x27;]: order! },
+    //       min_doc_count: parseInt(min_doc_count || &#x27;0&#x27;, 10),
+    //     },
+    //     aggs: {},
+    //   });
+
+    //   const createDateHistogramAgg &#x3D; () &#x3D;&gt; ({
+    //     date_histogram: {
+    //       interval: interval || &#x27;1d&#x27;,
+    //       field: field!,
+    //       min_doc_count: parseInt(min_doc_count || &#x27;0&#x27;, 10),
+    //       extended_bounds: {
+    //         min: timeBounds.min,
+    //         max: timeBounds.max,
+    //       },
+    //       format: &#x27;epoch_millis&#x27;,
+    //     },
+    //     aggs: {},
+    //   });
+
+    //   const createFiltersAgg &#x3D; () &#x3D;&gt; ({
+    //     filters: {
+    //       filters: filters!.reduce(
+    //         (acc, filter) &#x3D;&gt; {
+    //           acc[filter.label] &#x3D; {
+    //             query_string: { query: filter.query, analyze_wildcard: true },
+    //           };
+    //           return acc;
+    //         },
+    //         {} as {
+    //           [key: string]: {
+    //             query_string: { query: string; analyze_wildcard: boolean };
+    //           };
+    //         },
+    //       ),
+    //     },
+    //     aggs: {},
+    //   });
+
+    //   const createGeohashGridAgg &#x3D; () &#x3D;&gt; ({
+    //     geohash_grid: {
+    //       field: field!,
+    //       precision: parseInt(precision || &#x27;0&#x27;, 10),
+    //     },
+    //     aggs: {},
+    //   });
+
+    //   const createHistogramAgg &#x3D; () &#x3D;&gt; ({
+    //     histogram: {
+    //       field: field!,
+    //       interval: parseInt(interval || &#x27;0&#x27;, 10),
+    //       min_doc_count: parseInt(min_doc_count || &#x27;0&#x27;, 10),
+    //     },
+    //     aggs: {},
+    //   });
+
+    //   const createAgg &#x3D; () &#x3D;&gt; {
+    //     switch (type) {
+    //       case &#x27;terms&#x27;:
+    //         return createTermsAgg();
+    //       case &#x27;date_histogram&#x27;:
+    //         return createDateHistogramAgg();
+    //       case &#x27;filters&#x27;:
+    //         return createFiltersAgg();
+    //       case &#x27;geohash_grid&#x27;:
+    //         return createGeohashGridAgg();
+    //       case &#x27;histogram&#x27;:
+    //         return createHistogramAgg();
+    //       default:
+    //         return { aggs: {} };
+    //     }
+    //   };
+
+    //   const ids &#x3D; id.split(&#x27;.&#x27;);
+    //   let currentAgg &#x3D; aggs;
+
+    //   const level &#x3D; index + 1;
+    //   let path;
+
+    //   ids.forEach((currentId, index) &#x3D;&gt; {
+    //     if (!currentAgg[currentId]) {
+    //       currentAgg[currentId] &#x3D; createAgg();
+    //     }
+    //     if (index &lt; ids.length - 1) {
+    //       currentAgg &#x3D; currentAgg[currentId].aggs;
+    //     }
+    //   });
+    // });
+
+    // Add metrics to the deepest aggregation
+    // const addMetrics &#x3D; (aggs: IAggs, metrics: IMetric[]) &#x3D;&gt; {
+    //   Object.keys(aggs).forEach((key) &#x3D;&gt; {
+    //     if (Object.keys(aggs[key].aggs).length &#x3D;&#x3D;&#x3D; 0) {
+    //       metrics.forEach((metric) &#x3D;&gt; {
+    //         if (metric.type &#x3D;&#x3D;&#x3D; &#x27;count&#x27;) {
+    //           aggs[key].aggs[metric.id] &#x3D; { value_count: { field: &#x27;_index&#x27; } };
+    //         } else {
+    //           aggs[key].aggs[metric.id] &#x3D; {
+    //             [metric.type]: { field: metric.field },
+    //           };
+    //         }
+    //       });
+    //     } else {
+    //       addMetrics(aggs[key].aggs, metrics);
+    //     }
+    //   });
+    // };
+
+    // // addMetrics(aggs, input.metrics);
+
+    // metrics.reduce((acc, metric) &#x3D;&gt; {
+    //   const metricAgg: any &#x3D; {};
+    //   switch (metric.type) {
+    //     case &quot;avg&quot;:
+    //     case &quot;max&quot;:
+    //     case &quot;min&quot;:
+    //     case &quot;sum&quot;:
+    //     case &quot;count&quot;:
+    //       metricAgg[metric.id] &#x3D; { [metric.type]: { field: metric.field } };
+    //       break;
+
+    //     case &quot;extended_stats&quot;:
+    //       metricAgg[metric.id] &#x3D; { extended_stats: { field: metric.field } };
+    //       break;
+
+    //     case &quot;percentiles&quot;:
+    //       metricAgg[metric.id] &#x3D; {
+    //         percentiles: { field: metric.field, percents: metric.settings?.percents },
+    //       };
+    //       break;
+
+    //     case &quot;cardinality&quot;:
+    //       metricAgg[metric.id] &#x3D; { cardinality: { field: metric.field } };
+    //       break;
+
+    //     case &quot;moving_avg&quot;:
+    //       metricAgg[metric.id] &#x3D; {
+    //         moving_avg: {
+    //           buckets_path: metric.field,
+    //           model: metric.settings?.model || &quot;simple&quot;,
+    //           window: metric.settings?.window || 5,
+    //         },
+    //       };
+    //       break;
+
+    //     case &quot;moving_fn&quot;:
+    //     case &quot;derivative&quot;:
+    //     case &quot;cumulative_sum&quot;:
+    //       metricAgg[metric.id] &#x3D; { [metric.type]: { buckets_path: metric.field } };
+    //       break;
+    //   }
+
+    //   // Apply metrics to the lowest level aggs
+    //   Object.keys(aggs).forEach((key) &#x3D;&gt; {
+    //     if (!aggs[key].aggs) aggs[key].aggs &#x3D; {};
+    //     aggs[key].aggs &#x3D; { ...aggs[key].aggs, ...metricAgg };
+    //   });
+
+    //   return acc;
+    // }, aggs);
+
+    return {
+      size: input.aggregation ? 0 : 1000,
+      query: {
+        bool: {
+          filter: [
+            {
+              range: {
+                [input.timeField]: {
+                  gte: timeBounds.min,
+                  lte: timeBounds.max,
+                  // gte: dayjs(timeBounds.min).tz(timeBounds.timezone ?? &quot;Asia/Calcutta&quot;).toISOString(),
+                  // lte: dayjs(timeBounds.max).tz(timeBounds.timezone ?? &quot;Asia/Calcutta&quot;).toISOString(),
+                  format: &#x27;epoch_millis&#x27;,
+                },
+              },
+            },
+            {
+              query_string: {
+                analyze_wildcard: true,
+                query: input.query,
+              },
+            },
+          ],
+        },
+      },
+      aggs,
+      sort: sort,
+    };
+  }
+
+  updateDateHistogram(
+    aggregation: Aggregation,
+    newMin: number,
+    newMax: number,
+    timezone: string,
+  ): any {
+    const updatedAggregation &#x3D; { ...aggregation };
+    const traverseAndUpdate &#x3D; (agg: Aggregation) &#x3D;&gt; {
+      for (const key in agg) {
+        if (agg[key].date_histogram) {
+          agg[key].date_histogram.extended_bounds.min &#x3D; newMin;
+          agg[key].date_histogram.extended_bounds.max &#x3D; newMax;
+          agg[key].date_histogram.time_zone &#x3D; timezone;
+        }
+        if (agg[key].aggs) {
+          traverseAndUpdate(agg[key].aggs);
+        }
+      }
+    };
+    traverseAndUpdate(updatedAggregation);
+    return updatedAggregation;
+  }
+}
+
+
+</code></pre>
+    </div>
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+          <label class="dark-mode-switch">
+               <input type="checkbox">
+               <span class="slider">
+                    <svg class="slider-icon" viewBox="0 0 24 24" fill="none" height="20" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" width="20" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"></path>
+                    </svg>
+               </span>
+          </label>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 1;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'injectable';
+            var COMPODOC_CURRENT_PAGE_URL = 'WidgetService.html';
+            var MAX_SEARCH_RESULTS = 15;
+       </script>
+
+       <script>
+               $darkModeToggleSwitchers = document.querySelectorAll('.dark-mode-switch input');
+               checkToggle(darkModeState);
+               if ($darkModeToggleSwitchers.length > 0) {
+                    for (var i = 0; i < $darkModeToggleSwitchers.length; i++) {
+                         $darkModeToggleSwitchers[i].addEventListener('change', function (event) {
+                              darkModeState = !darkModeState;
+                              toggleDarkMode(darkModeState);
+                         });
+                    }
+               }
+          </script>
+
+       <script src="../js/libs/custom-elements.min.js"></script>
+       <script src="../js/libs/lit-html.js"></script>
+
+       <script src="../js/menu-wc.js" defer></script>
+       <script nomodule src="../js/menu-wc_es5.js" defer></script>
+
+       <script src="../js/libs/bootstrap-native.js"></script>
+
+       <script src="../js/libs/es6-shim.min.js"></script>
+       <script src="../js/libs/EventDispatcher.js"></script>
+       <script src="../js/libs/promise.min.js"></script>
+
+       <script src="../js/compodoc.js"></script>
+
+       <script src="../js/tabs.js"></script>
+       <script src="../js/menu.js"></script>
+       <script src="../js/libs/clipboard.min.js"></script>
+       <script src="../js/libs/prism.js"></script>
+       <script src="../js/sourceCode.js"></script>
+          <script src="../js/search/search.js"></script>
+          <script src="../js/search/lunr.min.js"></script>
+          <script src="../js/search/search-lunr.js"></script>
+          <script src="../js/search/search_index.js"></script>
+       <script src="../js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>

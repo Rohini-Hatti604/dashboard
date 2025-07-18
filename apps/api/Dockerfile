@@ -1,0 +1,50 @@
+FROM node:18-bullseye-slim AS base
+
+RUN apt-get update \
+    && apt-get install -y ca-certificates \
+    && rm -rf /var/lib/apt/lists/*
+
+FROM base AS builder
+# Set working directory
+WORKDIR /app
+RUN npm i -g turbo
+
+COPY . .
+
+RUN turbo prune --scope="@clean-start-dashboard/api" --docker
+
+# Add lockfile and package.json's of isolated subworkspace
+FROM base AS installer
+WORKDIR /app
+
+# First install the dependencies (as they change less often)
+COPY .gitignore .gitignore
+COPY --from=builder /app/out/json/ .
+COPY --from=builder /app/out/package-lock.json ./package-lock.json
+
+RUN rm -rf ~/.npm* && rm -rf /root/.npm* && npm install -f
+
+# Build the project
+COPY --from=builder /app/out/full/ .
+
+# Generate prisma client
+RUN npx turbo run db:generate --only
+RUN npx turbo run build --filter="@clean-start-dashboard/api"
+
+# remove unwanted dependencies
+FROM base AS pruner
+WORKDIR /app
+
+COPY --from=installer /app/ ./
+RUN npm prune --omit=dev
+
+FROM base AS runner
+WORKDIR /app
+
+# Don't run production as root
+RUN addgroup --system --gid 1001 nodejs
+RUN adduser --system --uid 1001 nestjs
+USER nestjs
+
+COPY --from=pruner --chown=nestjs:nodejs /app ./
+CMD node apps/api/dist/src/main.js

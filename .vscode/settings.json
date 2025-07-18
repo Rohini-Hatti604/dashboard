@@ -1,0 +1,30 @@
+{
+  "editor.codeActionsOnSave": {
+    "source.organizeImports": "explicit"
+  },
+  "prisma.import.exclude": ["**/generated/**", "**/schema.prisma"],
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "editor.formatOnSave": true,
+  "[prisma]": {
+    "editor.defaultFormatter": "ajmnz.prisma-import"
+  },
+  "conventionalCommits.scopes": [
+    "variables",
+    "Auth",
+    "dashboard",
+    "Advisory node graph",
+    "widgets",
+    "web",
+    "catalogue-management",
+    "project"
+  ],
+  "[typescript]": {
+    "editor.defaultFormatter": "vscode.typescript-language-features"
+  },
+  "[typescriptreact]": {
+    "editor.defaultFormatter": "vscode.typescript-language-features"
+  },
+  "[json]": {
+    "editor.defaultFormatter": "vscode.json-language-features"
+  }
+}

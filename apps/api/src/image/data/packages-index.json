@@ -1,0 +1,81 @@
+[
+  {
+    "id": "pkg-nginx-core",
+    "name": "nginx",
+    "description": "High-performance HTTP server and reverse proxy",
+    "version": "1.25.3-1~bookworm",
+    "imageVersionId": "ver-nginx-latest",
+    "repositoryUrl": "http://nginx.org/packages/debian",
+    "repositoryName": "nginx",
+    "packageUrl": "pkg:deb/debian/nginx@1.25.3-1~bookworm",
+    "size": 1203456,
+    "architecture": ["amd64", "arm64"],
+    "license": "BSD-2-Clause",
+    "sbomDocumentUrl": "https://sbom.example.com/nginx-1.25.3.json"
+  },
+  {
+    "id": "pkg-openssl-nginx",
+    "name": "openssl",
+    "description": "Secure Socket Layer (SSL) binary and related cryptographic tools",
+    "version": "3.0.11-1~deb12u2",
+    "imageVersionId": "ver-nginx-latest",
+    "repositoryUrl": "http://deb.debian.org/debian",
+    "repositoryName": "debian",
+    "packageUrl": "pkg:deb/debian/openssl@3.0.11-1~deb12u2",
+    "size": 4067328,
+    "architecture": ["amd64", "arm64", "i386"],
+    "license": "Apache-2.0"
+  },
+  {
+    "id": "pkg-postgresql-16",
+    "name": "postgresql-16",
+    "description": "The World's Most Advanced Open Source Relational Database",
+    "version": "16.1-1.pgdg120+1",
+    "imageVersionId": "ver-postgres-16",
+    "repositoryUrl": "http://apt.postgresql.org/pub/repos/apt",
+    "repositoryName": "postgresql",
+    "packageUrl": "pkg:deb/debian/postgresql-16@16.1-1.pgdg120+1",
+    "size": 45678901,
+    "architecture": ["amd64", "arm64", "ppc64le"],
+    "license": "PostgreSQL"
+  },
+  {
+    "id": "pkg-musl-alpine",
+    "name": "musl",
+    "description": "Lightweight standard C library",
+    "version": "1.2.4-r4",
+    "imageVersionId": "ver-alpine-3.19",
+    "repositoryUrl": "https://dl-cdn.alpinelinux.org/alpine/v3.19/main",
+    "repositoryName": "alpine",
+    "packageUrl": "pkg:apk/alpine/musl@1.2.4-r4",
+    "size": 387072,
+    "architecture": ["amd64", "arm64", "arm/v7"],
+    "license": "MIT"
+  },
+  {
+    "id": "pkg-python312",
+    "name": "python3.12",
+    "description": "Python programming language interpreter",
+    "version": "3.12.1-1",
+    "imageVersionId": "ver-python-3.12",
+    "repositoryUrl": "http://deb.debian.org/debian",
+    "repositoryName": "debian",
+    "packageUrl": "pkg:deb/debian/python3.12@3.12.1-1",
+    "size": 5842944,
+    "architecture": ["amd64", "arm64", "i386"],
+    "license": "PSF-2.0"
+  },
+  {
+    "id": "pkg-pip",
+    "name": "python3-pip",
+    "description": "Python package installer",
+    "version": "23.3.2",
+    "imageVersionId": "ver-python-3.12",
+    "repositoryUrl": "https://pypi.org/",
+    "repositoryName": "pypi",
+    "packageUrl": "pkg:pypi/pip@23.3.2",
+    "size": 2856960,
+    "architecture": ["all"],
+    "license": "MIT"
+  }
+]

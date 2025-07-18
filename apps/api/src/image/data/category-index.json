@@ -1,0 +1,132 @@
+[
+  {
+    "id": "cat-os",
+    "name": "Operating Systems",
+    "description": "Base operating system images for containers",
+    "imageUrl": "https://cdn.example.com/categories/os-icon.svg",
+    "createdAt": "2023-01-01T00:00:00Z",
+    "updatedAt": "2024-01-20T00:00:00Z",
+    "images": [
+      {
+        "id": "img-alpine-official",
+        "name": "alpine",
+        "pullCount": 1000000000
+      },
+      {
+        "id": "img-ubuntu-official",
+        "name": "ubuntu",
+        "pullCount": 5000000000
+      },
+      {
+        "id": "img-debian-official",
+        "name": "debian",
+        "pullCount": 1000000000
+      }
+    ]
+  },
+  {
+    "id": "cat-webserver",
+    "name": "Web Servers",
+    "description": "HTTP servers, reverse proxies, and application servers",
+    "imageUrl": "https://cdn.example.com/categories/webserver-icon.svg",
+    "createdAt": "2023-01-01T00:00:00Z",
+    "updatedAt": "2024-01-20T00:00:00Z",
+    "images": [
+      {
+        "id": "img-nginx-official",
+        "name": "nginx",
+        "pullCount": 5000000000
+      },
+      {
+        "id": "img-httpd-official",
+        "name": "httpd",
+        "pullCount": 1000000000
+      },
+      {
+        "id": "img-traefik-official",
+        "name": "traefik",
+        "pullCount": 500000000
+      }
+    ]
+  },
+  {
+    "id": "cat-database",
+    "name": "Databases",
+    "description": "Relational databases, NoSQL stores, and caching systems",
+    "imageUrl": "https://cdn.example.com/categories/database-icon.svg",
+    "createdAt": "2023-01-01T00:00:00Z",
+    "updatedAt": "2024-01-19T00:00:00Z",
+    "images": [
+      {
+        "id": "img-postgres-official",
+        "name": "postgres",
+        "pullCount": 1000000000
+      },
+      {
+        "id": "img-mysql-official",
+        "name": "mysql",
+        "pullCount": 1000000000
+      },
+      {
+        "id": "img-redis-official",
+        "name": "redis",
+        "pullCount": 1000000000
+      },
+      {
+        "id": "img-mongo-official",
+        "name": "mongo",
+        "pullCount": 1000000000
+      }
+    ]
+  },
+  {
+    "id": "cat-language",
+    "name": "Programming Languages",
+    "description": "Language runtimes and development environments",
+    "imageUrl": "https://cdn.example.com/categories/languages-icon.svg",
+    "createdAt": "2023-01-01T00:00:00Z",
+    "updatedAt": "2024-01-17T00:00:00Z",
+    "images": [
+      {
+        "id": "img-python-official",
+        "name": "python",
+        "pullCount": 1000000000
+      },
+      {
+        "id": "img-node-official",
+        "name": "node",
+        "pullCount": 1000000000
+      },
+      {
+        "id": "img-golang-official",
+        "name": "golang",
+        "pullCount": 500000000
+      },
+      {
+        "id": "img-openjdk-official",
+        "name": "openjdk",
+        "pullCount": 1000000000
+      }
+    ]
+  },
+  {
+    "id": "cat-cicd",
+    "name": "CI/CD Tools",
+    "description": "Continuous Integration and Deployment tools",
+    "imageUrl": "https://cdn.example.com/categories/cicd-icon.svg",
+    "createdAt": "2023-01-01T00:00:00Z",
+    "updatedAt": "2024-01-15T00:00:00Z",
+    "images": [
+      {
+        "id": "img-jenkins-official",
+        "name": "jenkins",
+        "pullCount": 100000000
+      },
+      {
+        "id": "img-gitlab-official",
+        "name": "gitlab/gitlab-ce",
+        "pullCount": 50000000
+      }
+    ]
+  }
+]
